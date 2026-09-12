@@ -4,15 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ramazan Rakhman — Resume</title>
+  
+  <!-- "RR" Webpage Logo / Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111827'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, sans-serif' font-size='44' font-weight='700' fill='%23ffffff'>RR</text></svg>">
+
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --badge-bg: #f3f4f6;
-      --badge-text: #374151;
-      --btn-border: #111827;
+      --bg: #f8fafc; /* Darker off-white background */
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --badge-bg: #e2e8f0;
+      --badge-text: #334155;
+      --btn-border: #0f172a;
+      --link-hover: #2563eb;
     }
 
     * {
@@ -26,7 +31,7 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.5;
-      padding: 40px 20px 80px;
+      padding: 48px 20px 80px;
     }
 
     .container {
@@ -34,7 +39,7 @@
       margin: 0 auto;
     }
 
-    /* Top Row: Photo on Left & Language Switcher on Right */
+    /* Top Row: Photo (Left) & Language Switcher (Right) */
     .top-row {
       display: flex;
       justify-content: space-between;
@@ -48,7 +53,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--border);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
     .lang-dropdown {
@@ -60,7 +65,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
+      padding: 7px 14px;
       background: #ffffff;
       border: 1.5px solid var(--btn-border);
       border-radius: 8px;
@@ -72,7 +77,7 @@
     }
 
     .lang-btn:hover {
-      background-color: #f9fafb;
+      background-color: #f1f5f9;
     }
 
     .lang-menu {
@@ -83,7 +88,7 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
       list-style: none;
       min-width: 130px;
       overflow: hidden;
@@ -128,13 +133,20 @@
       margin-bottom: 12px;
     }
 
-    .location {
+    .location-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       font-size: 0.88rem;
       color: var(--muted);
       margin-bottom: 16px;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .location-link:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
     }
 
     .contacts {
@@ -147,18 +159,21 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
+      background: #ffffff;
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 8px;
       color: var(--muted);
       text-decoration: none;
       transition: all 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
     }
 
     .icon-btn:hover {
-      background-color: var(--badge-bg);
+      background-color: #f1f5f9;
       color: var(--text);
+      border-color: #cbd5e1;
     }
 
     /* Content Sections */
@@ -239,7 +254,7 @@
     }
 
     .skill-tag {
-      background: #111827;
+      background: #0f172a;
       color: #ffffff;
       padding: 4px 10px;
       border-radius: 6px;
@@ -250,10 +265,9 @@
 </head>
 <body>
   <div class="container">
-    <!-- Top Row: Avatar (Left) and Language Switcher (Right) -->
+    <!-- Top Row: Avatar on Left & Language Switcher on Right -->
     <div class="top-row">
-      <!-- Replace with photo.jpg if committed to your GitHub repo -->
-      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="Ramazan Rakhman" class="avatar" />
+      <img src="3x4photo_Ramazan.jpg" alt="Ramazan Rakhman" class="avatar" />
 
       <div class="lang-dropdown">
         <button class="lang-btn" id="langToggleBtn" type="button">
@@ -279,36 +293,40 @@
     <header class="intro-section">
       <h1 data-i18n="name">Ramazan Rakhman</h1>
       <p class="bio" data-i18n="bio">
-        B.Sc. Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.
+        Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.
       </p>
-      <div class="location">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+      <!-- Google Maps Link for Astana -->
+      <a href="https://maps.google.com/?q=Astana,+Kazakhstan" target="_blank" class="location-link" title="Open Astana in Google Maps">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
         </svg>
-        <span data-i18n="location">Almaty, Kazakhstan</span>
-      </div>
+        <span data-i18n="location">Astana, Kazakhstan</span>
+      </a>
+
+      <!-- Contact Buttons -->
       <div class="contacts">
-        <!-- Email -->
-        <a href="mailto:rakhmanramazan@gmail.com" class="icon-btn" title="Email">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <!-- Gmail -->
+        <a href="mailto:rakhmanramazan@gmail.com" class="icon-btn" title="Send Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
           </svg>
         </a>
         <!-- Phone -->
-        <a href="tel:+77712548222" class="icon-btn" title="Phone">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="tel:+77712548222" class="icon-btn" title="Call Phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
         </a>
         <!-- LinkedIn -->
-        <a href="https://linkedin.com" target="_blank" class="icon-btn" title="LinkedIn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="https://linkedin.com/in/ramazan-rakhman-3200222b9" target="_blank" class="icon-btn" title="LinkedIn Profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
           </svg>
         </a>
         <!-- GitHub -->
-        <a href="https://github.com" target="_blank" class="icon-btn" title="GitHub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="https://github.com/rkhm-rm" target="_blank" class="icon-btn" title="GitHub Profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
           </svg>
         </a>
@@ -344,9 +362,9 @@
           </div>
           <span class="date" data-i18n="dateNu2">May 2026 — Present</span>
         </div>
-        <div class="role" data-i18n="roleNu2">Research Assistant</div>
+        <div class="role" data-i18n="roleNu2">Research Assistant (Rockburst & Geomechanics)</div>
         <ul class="bullets">
-          <li data-i18n="nu2_1">Conducted literature reviews and conceptual studies of rockburst mechanisms, hazard assessment, monitoring, and risk mitigation.</li>
+          <li data-i18n="nu2_1">Conducted literature reviews and conceptual studies of rockburst mechanisms, hazard assessment, and risk mitigation.</li>
           <li data-i18n="nu2_2">Developed preliminary laboratory research plans focused on brittle failure and energy-based rockburst proneness criteria.</li>
         </ul>
       </div>
@@ -377,7 +395,7 @@
           </div>
           <span class="date">June 2025 — Oct 2025</span>
         </div>
-        <div class="role" data-i18n="roleNu1">Research Assistant</div>
+        <div class="role" data-i18n="roleNu1">Research Assistant (CCS)</div>
         <ul class="bullets">
           <li data-i18n="nu1_1">Reviewed academic research on CO₂ Capture and Storage (CCS), focusing on the role of fault gouge and fault zones.</li>
           <li data-i18n="nu1_2">Observed and assisted in laboratory tests including core flooding, uniaxial compression, and permeability testing.</li>
@@ -412,9 +430,9 @@
           </div>
           <span class="date">Aug 2023 — May 2027</span>
         </div>
-        <div class="role" data-i18n="eduDegree">Bachelor of Science in Mining Engineering</div>
+        <div class="role" data-i18n="eduDegree">Bachelor of Science in Mining Engineering (CGPA: 3.11/4)</div>
         <ul class="bullets">
-          <li data-i18n="eduClub">Member of the Society for Mining, Metallurgy & Exploration (SME) club.</li>
+          <li data-i18n="eduClub">Member of the Society for Mining, Metallurgy & Exploration (SME) student club (2024 — 2025).</li>
         </ul>
       </div>
     </section>
@@ -423,12 +441,16 @@
     <section>
       <h2 data-i18n="skillsTitle">Skills & Software</h2>
       <div class="skills-list">
+        <span class="skill-tag">Micromine Beyond</span>
+        <span class="skill-tag">Micromine Origin</span>
+        <span class="skill-tag">VentSim</span>
         <span class="skill-tag">GEOVIA Surpac</span>
+        <span class="skill-tag">RS2</span>
+        <span class="skill-tag">QGIS</span>
         <span class="skill-tag">MapInfo Professional</span>
         <span class="skill-tag">Isatis Neo</span>
         <span class="skill-tag">Python</span>
-        <span class="skill-tag">Data Automation</span>
-        <span class="skill-tag">Mine Planning</span>
+        <span class="skill-tag">VS Code</span>
         <span class="skill-tag">Excel</span>
       </div>
     </section>
@@ -439,8 +461,8 @@
       en: {
         label: "English",
         name: "Ramazan Rakhman",
-        bio: "B.Sc. Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.",
-        location: "Almaty, Kazakhstan",
+        bio: "Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.",
+        location: "Astana, Kazakhstan",
         workTitle: "Work Experience",
         badgeInternship: "Internship",
         badgeResearch: "Research",
@@ -464,15 +486,15 @@
         volkov1: "Utilized MapInfo Professional to digitize lithological sections, samples, and ore interval parameters.",
         volkov2: "Systematized geological data and assisted in team project coordination and office schedule management.",
         eduTitle: "Education",
-        eduDegree: "Bachelor of Science in Mining Engineering",
-        eduClub: "Member of the Society for Mining, Metallurgy & Exploration (SME) student chapter.",
+        eduDegree: "Bachelor of Science in Mining Engineering (CGPA: 3.11/4)",
+        eduClub: "Member of the Society for Mining, Metallurgy & Exploration (SME) student club (2024 — 2025).",
         skillsTitle: "Skills & Software"
       },
       kk: {
         label: "Қазақша",
         name: "Рамазан Рахман",
-        bio: "Назарбаев Университетінің тау-кен ісі мамандығының студенті. Кеніштерді жоспарлау, геомеханикалық талдау және Python көмегімен деректерді өңдеуде тәжірибесі бар.",
-        location: "Алматы, Қазақстан",
+        bio: "Назарбаев Университетінің тау-кен ісі мамандығының студенті. Кеніштерді жоспарлау, геомеханикалық талдау және Python көмегімен автоматтандыруда тәжірибесі бар.",
+        location: "Астана, Қазақстан",
         workTitle: "Жұмыс тәжірибесі",
         badgeInternship: "Тағылымдама",
         badgeResearch: "Зерттеу",
@@ -483,11 +505,11 @@
         aman2: "400-ден астам бейнені белгілеп, құрылымдалған деректер жиынтығына жинақтайтын Python құбырын әзірледі.",
         dateNu2: "Мамыр 2026 — Қазіргі уақыт",
         roleNu2: "Зерттеуші көмекшісі (Тау соққысы және геомеханика)",
-        nu2_1: "Тау соққысы механизмдері, қауіпті бағалау және тәуекелдерді азайту бойынша әдебиеттерге концептуалды зерттеу жүргізді.",
+        nu2_1: "Тау соққысы механизмдері, қауіпті бағалау және тәуекелдерді азайту бойынша әдебиеттерге зерттеу жүргізді.",
         nu2_2: "Морт сыну және энергияға негізделген соққыға бейімділік критерийлері бойынша зертханалық жоспар әзірледі.",
         roleKaz: "Тағылымдамашы, Кеніштерді жоспарлау бөлімі",
         kaz1: "Кенішті жоспарлау және карьердегі ашық өндірістік процестер бойынша практикалық білім алды.",
-        kaz2: "GEOVIA Surpac бағдарламасын және нақты өндірістік деректерді пайдаланып, бұрғылау-жару жобаларына көмектесті.",
+        kaz2: "GEOVIA Surpac бағдарламасын және өндірістік деректерді пайдаланып, бұрғылау-жару жобаларына көмектесті.",
         kaz3: "Қауіпсіздік техникасымен танысып, карьерде бұрғылау, жару, тиеу және тасымалдау жұмыстарын бақылады.",
         roleNu1: "Зерттеуші көмекшісі (CCS)",
         nu1_1: "Көмірқышқыл газын (CO₂) ұстау және сақтау бойынша ғылыми жұмыстарды, соның ішінде жарықшақты аймақтардың рөлін талдады.",
@@ -496,15 +518,15 @@
         volkov1: "MapInfo Professional арқылы литологиялық тіліктерді, үлгілерді және кен аралықтарының параметрлерін цифрлады.",
         volkov2: "Геологиялық ақпаратты жүйелеп, тапсырмаларды үйлестіру мен жұмыс кестесін жүргізуге атсалысты.",
         eduTitle: "Білім",
-        eduDegree: "Тау-кен ісі саласындағы ғылым бакалавры (B.Sc.)",
-        eduClub: "Society for Mining, Metallurgy & Exploration (SME) студенттік клубының мүшесі.",
+        eduDegree: "Тау-кен ісі саласындағы ғылым бакалавры (CGPA: 3.11/4)",
+        eduClub: "Society for Mining, Metallurgy & Exploration (SME) студенттік клубының мүшесі (2024 — 2025).",
         skillsTitle: "Дағдылар мен бағдарламалар"
       },
       ru: {
         label: "Русский",
         name: "Рамазан Рахман",
         bio: "Студент горного дела в Назарбаев Университете с практическим опытом в проектировании горных работ, геомеханике и автоматизации данных на Python.",
-        location: "Алматы, Казахстан",
+        location: "Астана, Казахстан",
         workTitle: "Опыт работы",
         badgeInternship: "Стажировка",
         badgeResearch: "Исследования",
@@ -528,8 +550,8 @@
         volkov1: "Оцифровывал литологические разрезы, образцы и параметры рудных интервалов в MapInfo Professional.",
         volkov2: "Систематизировал геологические данные и участвовал в приоритизации рабочих задач отдела.",
         eduTitle: "Образование",
-        eduDegree: "Бакалавр наук по горному делу (B.Sc.)",
-        eduClub: "Член студенческого отделения Society for Mining, Metallurgy & Exploration (SME).",
+        eduDegree: "Бакалавр наук по горному делу (CGPA: 3.11/4)",
+        eduClub: "Член студенческого отделения Society for Mining, Metallurgy & Exploration (SME) (2024 — 2025).",
         skillsTitle: "Навыки и программы"
       }
     };
