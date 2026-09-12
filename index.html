@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ramazan Rakhman — Resume</title>
   
-  <!-- "RR" Webpage Logo / Favicon -->
+  <!-- "RR" Webpage Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111827'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, sans-serif' font-size='44' font-weight='700' fill='%23ffffff'>RR</text></svg>">
 
   <style>
     :root {
-      --bg: #f8fafc; /* Darker off-white background */
+      --bg: #f8fafc;
       --text: #0f172a;
       --muted: #64748b;
       --border: #e2e8f0;
@@ -31,7 +31,7 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.5;
-      padding: 48px 20px 80px;
+      padding: 48px 20px 100px;
     }
 
     .container {
@@ -39,7 +39,7 @@
       margin: 0 auto;
     }
 
-    /* Top Row: Photo (Left) & Language Switcher (Right) */
+    /* Top Row: Avatar (Left) & Language Switcher (Right) */
     .top-row {
       display: flex;
       justify-content: space-between;
@@ -176,7 +176,7 @@
       border-color: #cbd5e1;
     }
 
-    /* Content Sections */
+    /* Resume Sections */
     section {
       margin-top: 36px;
     }
@@ -246,7 +246,6 @@
       margin-bottom: 4px;
     }
 
-    /* Skills Badges */
     .skills-list {
       display: flex;
       flex-wrap: wrap;
@@ -260,6 +259,192 @@
       border-radius: 6px;
       font-size: 0.82rem;
       font-weight: 500;
+    }
+
+    /* Fixed Bottom Footer Prompt */
+    .cmd-footer-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(248, 250, 252, 0.85);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      z-index: 40;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .cmd-footer-bar kbd {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.78rem;
+      font-family: inherit;
+      color: var(--text);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Command Palette Modal */
+    .cmd-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(3px);
+      z-index: 100;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 12vh;
+    }
+
+    .cmd-backdrop.open {
+      display: flex;
+    }
+
+    .cmd-modal {
+      background: #ffffff;
+      width: 90%;
+      max-width: 480px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      animation: modalFade 0.15s ease-out;
+    }
+
+    @keyframes modalFade {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .cmd-header {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      gap: 10px;
+    }
+
+    .cmd-search-icon {
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .cmd-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .cmd-close-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.25rem;
+      line-height: 1;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .cmd-close-btn:hover {
+      background: var(--badge-bg);
+      color: var(--text);
+    }
+
+    .cmd-body {
+      max-height: 320px;
+      overflow-y: auto;
+      padding: 8px;
+    }
+
+    .cmd-group-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      font-weight: 600;
+      padding: 8px 10px 4px;
+    }
+
+    .cmd-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.12s ease;
+    }
+
+    .cmd-item:hover, .cmd-item.selected {
+      background: var(--badge-bg);
+    }
+
+    .cmd-item svg {
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+      }
+
+      .top-row .lang-dropdown,
+      .contacts,
+      .cmd-footer-bar,
+      .cmd-backdrop {
+        display: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .avatar {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+
+      .badge {
+        border: 1px solid #e2e8f0;
+        background: #f8fafc !important;
+        color: #1e293b !important;
+      }
+
+      .skill-tag {
+        background: #f1f5f9 !important;
+        color: #0f172a !important;
+        border: 1px solid #cbd5e1;
+      }
+
+      .item {
+        page-break-inside: avoid;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
     }
   </style>
 </head>
@@ -306,25 +491,21 @@
 
       <!-- Contact Buttons -->
       <div class="contacts">
-        <!-- Gmail -->
         <a href="mailto:rakhmanramazan@gmail.com" class="icon-btn" title="Send Email">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
           </svg>
         </a>
-        <!-- Phone -->
         <a href="tel:+77712548222" class="icon-btn" title="Call Phone">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
         </a>
-        <!-- LinkedIn -->
         <a href="https://linkedin.com/in/ramazan-rakhman-3200222b9" target="_blank" class="icon-btn" title="LinkedIn Profile">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
           </svg>
         </a>
-        <!-- GitHub -->
         <a href="https://github.com/rkhm-rm" target="_blank" class="icon-btn" title="GitHub Profile">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
@@ -337,7 +518,6 @@
     <section>
       <h2 data-i18n="workTitle">Work Experience</h2>
 
-      <!-- Aman Startup -->
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
@@ -353,7 +533,6 @@
         </ul>
       </div>
 
-      <!-- NU SMG - Rockburst -->
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
@@ -369,7 +548,6 @@
         </ul>
       </div>
 
-      <!-- KAZ Minerals -->
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
@@ -386,7 +564,6 @@
         </ul>
       </div>
 
-      <!-- NU SMG - CCS -->
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
@@ -402,7 +579,6 @@
         </ul>
       </div>
 
-      <!-- Volkovgeology -->
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
@@ -456,6 +632,53 @@
     </section>
   </div>
 
+  <!-- Bottom Command Bar: Ctrl + Z -->
+  <footer class="cmd-footer-bar" id="openCmdBar">
+    <span data-i18n="cmdBar">Press <kbd>Ctrl + Z</kbd> to open the command menu</span>
+  </footer>
+
+  <!-- Command Palette Modal -->
+  <div class="cmd-backdrop" id="cmdBackdrop">
+    <div class="cmd-modal" id="cmdModal">
+      <div class="cmd-header">
+        <svg class="cmd-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="cmdInput" class="cmd-input" placeholder="Type a command or search..." autocomplete="off" />
+        <button class="cmd-close-btn" id="cmdCloseBtn" type="button">&times;</button>
+      </div>
+      <div class="cmd-body" id="cmdList">
+        <div class="cmd-group-label" data-i18n="cmdActions">Actions</div>
+        <div class="cmd-item" id="cmdActionPrint">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/>
+          </svg>
+          <span data-i18n="cmdPrint">Print</span>
+        </div>
+
+        <div class="cmd-group-label" data-i18n="cmdLinks">Links</div>
+        <a href="https://rkhm-rm.github.io/resume" class="cmd-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+          </svg>
+          <span data-i18n="cmdSite">Personal website</span>
+        </a>
+        <a href="https://github.com/rkhm-rm" target="_blank" class="cmd-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/ramazan-rakhman-3200222b9" target="_blank" class="cmd-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
     const translations = {
       en: {
@@ -488,7 +711,13 @@
         eduTitle: "Education",
         eduDegree: "Bachelor of Science in Mining Engineering (CGPA: 3.11/4)",
         eduClub: "Member of the Society for Mining, Metallurgy & Exploration (SME) student club (2024 — 2025).",
-        skillsTitle: "Skills & Software"
+        skillsTitle: "Skills & Software",
+        cmdBar: "Press <kbd>Ctrl + Z</kbd> to open the command menu",
+        cmdPlaceholder: "Type a command or search...",
+        cmdActions: "Actions",
+        cmdLinks: "Links",
+        cmdPrint: "Print",
+        cmdSite: "Personal website"
       },
       kk: {
         label: "Қазақша",
@@ -520,7 +749,13 @@
         eduTitle: "Білім",
         eduDegree: "Тау-кен ісі саласындағы ғылым бакалавры (CGPA: 3.11/4)",
         eduClub: "Society for Mining, Metallurgy & Exploration (SME) студенттік клубының мүшесі (2024 — 2025).",
-        skillsTitle: "Дағдылар мен бағдарламалар"
+        skillsTitle: "Дағдылар мен бағдарламалар",
+        cmdBar: "Мәзірді ашу үшін <kbd>Ctrl + Z</kbd> басыңыз",
+        cmdPlaceholder: "Команданы немесе іздеуді жазыңыз...",
+        cmdActions: "Әрекеттер",
+        cmdLinks: "Сілтемелер",
+        cmdPrint: "Басып шығару (Печать)",
+        cmdSite: "Жеке сайт"
       },
       ru: {
         label: "Русский",
@@ -552,14 +787,22 @@
         eduTitle: "Образование",
         eduDegree: "Бакалавр наук по горному делу (CGPA: 3.11/4)",
         eduClub: "Член студенческого отделения Society for Mining, Metallurgy & Exploration (SME) (2024 — 2025).",
-        skillsTitle: "Навыки и программы"
+        skillsTitle: "Навыки и программы",
+        cmdBar: "Нажмите <kbd>Ctrl + Z</kbd> для вызова командного меню",
+        cmdPlaceholder: "Введите команду или поиск...",
+        cmdActions: "Действия",
+        cmdLinks: "Ссылки",
+        cmdPrint: "Печать",
+        cmdSite: "Личный сайт"
       }
     };
 
+    // Language Switching
     const toggleBtn = document.getElementById("langToggleBtn");
     const langMenu = document.getElementById("langMenu");
     const currentLangLabel = document.getElementById("currentLangLabel");
     const langOptions = document.querySelectorAll(".lang-option");
+    const cmdInput = document.getElementById("cmdInput");
 
     function setLanguage(lang) {
       const selected = translations[lang] ? lang : "en";
@@ -568,9 +811,17 @@
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
         if (dict[key]) {
-          el.textContent = dict[key];
+          if (key === "cmdBar") {
+            el.innerHTML = dict[key];
+          } else {
+            el.textContent = dict[key];
+          }
         }
       });
+
+      if (cmdInput && dict.cmdPlaceholder) {
+        cmdInput.placeholder = dict.cmdPlaceholder;
+      }
 
       currentLangLabel.textContent = dict.label;
       localStorage.setItem("preferred_lang", selected);
@@ -599,6 +850,73 @@
 
     const savedLang = localStorage.getItem("preferred_lang") || "en";
     setLanguage(savedLang);
+
+    // Command Menu Logic
+    const cmdBackdrop = document.getElementById("cmdBackdrop");
+    const cmdModal = document.getElementById("cmdModal");
+    const cmdCloseBtn = document.getElementById("cmdCloseBtn");
+    const openCmdBar = document.getElementById("openCmdBar");
+    const cmdActionPrint = document.getElementById("cmdActionPrint");
+    const cmdItems = document.querySelectorAll(".cmd-item");
+
+    function openCommandMenu() {
+      cmdBackdrop.classList.add("open");
+      cmdInput.value = "";
+      filterCmdItems("");
+      setTimeout(() => cmdInput.focus(), 50);
+    }
+
+    function closeCommandMenu() {
+      cmdBackdrop.classList.remove("open");
+    }
+
+    // Shortcut: Ctrl + Z (or Cmd + Z on Mac)
+    window.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && (e.key === "z" || e.key === "Z" || e.code === "KeyZ")) {
+        e.preventDefault();
+        if (cmdBackdrop.classList.contains("open")) {
+          closeCommandMenu();
+        } else {
+          openCommandMenu();
+        }
+      } else if (e.key === "Escape" && cmdBackdrop.classList.contains("open")) {
+        closeCommandMenu();
+      }
+    });
+
+    openCmdBar.addEventListener("click", openCommandMenu);
+    cmdCloseBtn.addEventListener("click", closeCommandMenu);
+
+    cmdBackdrop.addEventListener("click", (e) => {
+      if (!cmdModal.contains(e.target)) {
+        closeCommandMenu();
+      }
+    });
+
+    // Print Action
+    cmdActionPrint.addEventListener("click", () => {
+      closeCommandMenu();
+      setTimeout(() => {
+        window.print();
+      }, 150);
+    });
+
+    // Search filter inside command palette
+    function filterCmdItems(query) {
+      const q = query.toLowerCase().trim();
+      cmdItems.forEach((item) => {
+        const text = item.textContent.toLowerCase();
+        if (!q || text.includes(q)) {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+
+    cmdInput.addEventListener("input", (e) => {
+      filterCmdItems(e.target.value);
+    });
   </script>
 </body>
 </html>
