@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramazan Rakhman — Resume</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --badge-bg: #f3f4f6;
+      --badge-text: #374151;
+      --btn-border: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 40px 20px 80px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Top Row: Photo on Left & Language Switcher on Right */
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .lang-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #ffffff;
+      border: 1.5px solid var(--btn-border);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+
+    .lang-btn:hover {
+      background-color: #f9fafb;
+    }
+
+    .lang-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      list-style: none;
+      min-width: 130px;
+      overflow: hidden;
+      z-index: 50;
+    }
+
+    .lang-menu.show {
+      display: block;
+    }
+
+    .lang-option {
+      padding: 9px 14px;
+      font-size: 0.88rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+
+    .lang-option:hover {
+      background-color: var(--badge-bg);
+    }
+
+    .lang-option.active {
+      font-weight: 600;
+    }
+
+    /* Intro Section */
+    .intro-section {
+      margin-bottom: 32px;
+    }
+
+    .intro-section h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .bio {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .location {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .contacts {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .icon-btn:hover {
+      background-color: var(--badge-bg);
+      color: var(--text);
+    }
+
+    /* Content Sections */
+    section {
+      margin-top: 36px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .item {
+      margin-bottom: 22px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item-title-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .company {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 2px 7px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .date {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .role {
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    ul.bullets {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    ul.bullets li {
+      margin-bottom: 4px;
+    }
+
+    /* Skills Badges */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: #111827;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Row: Avatar (Left) and Language Switcher (Right) -->
+    <div class="top-row">
+      <!-- Replace with photo.jpg if committed to your GitHub repo -->
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="Ramazan Rakhman" class="avatar" />
+
+      <div class="lang-dropdown">
+        <button class="lang-btn" id="langToggleBtn" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 8 6 6"/>
+            <path d="m4 14 6-6 2-3"/>
+            <path d="M2 5h12"/>
+            <path d="M7 2h1"/>
+            <path d="m22 22-5-10-5 10"/>
+            <path d="M14 18h6"/>
+          </svg>
+          <span id="currentLangLabel">English</span>
+        </button>
+        <ul class="lang-menu" id="langMenu">
+          <li class="lang-option" data-lang="en">English</li>
+          <li class="lang-option" data-lang="kk">Қазақша</li>
+          <li class="lang-option" data-lang="ru">Русский</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Intro Header -->
+    <header class="intro-section">
+      <h1 data-i18n="name">Ramazan Rakhman</h1>
+      <p class="bio" data-i18n="bio">
+        B.Sc. Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.
+      </p>
+      <div class="location">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span data-i18n="location">Almaty, Kazakhstan</span>
+      </div>
+      <div class="contacts">
+        <!-- Email -->
+        <a href="mailto:rakhmanramazan@gmail.com" class="icon-btn" title="Email">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+        <!-- Phone -->
+        <a href="tel:+77712548222" class="icon-btn" title="Phone">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" class="icon-btn" title="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com" target="_blank" class="icon-btn" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Work Experience -->
+    <section>
+      <h2 data-i18n="workTitle">Work Experience</h2>
+
+      <!-- Aman Startup -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <span class="company">Aman Startup</span>
+            <span class="badge" data-i18n="badgeInternship">Internship</span>
+          </div>
+          <span class="date" data-i18n="dateAman">July 2026 — Present</span>
+        </div>
+        <div class="role" data-i18n="roleAman">QA Intern</div>
+        <ul class="bullets">
+          <li data-i18n="aman1">Reviewed AI-flagged security incidents across school and university camera feeds to identify false positives.</li>
+          <li data-i18n="aman2">Built a Python pipeline to label and organize 400+ incident videos into a structured dataset with automated metadata.</li>
+        </ul>
+      </div>
+
+      <!-- NU SMG - Rockburst -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <span class="company">Nazarbayev University (SMG)</span>
+            <span class="badge" data-i18n="badgeResearch">Research</span>
+          </div>
+          <span class="date" data-i18n="dateNu2">May 2026 — Present</span>
+        </div>
+        <div class="role" data-i18n="roleNu2">Research Assistant</div>
+        <ul class="bullets">
+          <li data-i18n="nu2_1">Conducted literature reviews and conceptual studies of rockburst mechanisms, hazard assessment, monitoring, and risk mitigation.</li>
+          <li data-i18n="nu2_2">Developed preliminary laboratory research plans focused on brittle failure and energy-based rockburst proneness criteria.</li>
+        </ul>
+      </div>
+
+      <!-- KAZ Minerals -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <span class="company">KAZ Minerals, Aktogay</span>
+            <span class="badge" data-i18n="badgeInternship">Internship</span>
+          </div>
+          <span class="date">May 2026</span>
+        </div>
+        <div class="role" data-i18n="roleKaz">Intern, Mine Planning Section</div>
+        <ul class="bullets">
+          <li data-i18n="kaz1">Gained practical understanding of mine planning workflows and open-pit production operations.</li>
+          <li data-i18n="kaz2">Assisted with drilling and blasting designs using GEOVIA Surpac and actual production data.</li>
+          <li data-i18n="kaz3">Learned key safety requirements and monitored drilling, blasting, loading, and hauling operations on site.</li>
+        </ul>
+      </div>
+
+      <!-- NU SMG - CCS -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <span class="company">Nazarbayev University (SMG)</span>
+            <span class="badge" data-i18n="badgeResearch">Research</span>
+          </div>
+          <span class="date">June 2025 — Oct 2025</span>
+        </div>
+        <div class="role" data-i18n="roleNu1">Research Assistant</div>
+        <ul class="bullets">
+          <li data-i18n="nu1_1">Reviewed academic research on CO₂ Capture and Storage (CCS), focusing on the role of fault gouge and fault zones.</li>
+          <li data-i18n="nu1_2">Observed and assisted in laboratory tests including core flooding, uniaxial compression, and permeability testing.</li>
+        </ul>
+      </div>
+
+      <!-- Volkovgeology -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <span class="company">JSC "Volkovgeology", Kazatomprom</span>
+            <span class="badge" data-i18n="badgeInternship">Internship</span>
+          </div>
+          <span class="date">Dec 2024 — Jan 2025</span>
+        </div>
+        <div class="role" data-i18n="roleVolkov">Intern, Digital Geological Data Processing</div>
+        <ul class="bullets">
+          <li data-i18n="volkov1">Utilized MapInfo Professional to digitize lithological sections, samples, and ore interval parameters.</li>
+          <li data-i18n="volkov2">Systematized geological data and assisted in team project coordination and office schedule management.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2 data-i18n="eduTitle">Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <span class="company">Nazarbayev University</span>
+            <span class="badge" data-i18n="badgeGrant">Alash Grant (2023)</span>
+          </div>
+          <span class="date">Aug 2023 — May 2027</span>
+        </div>
+        <div class="role" data-i18n="eduDegree">Bachelor of Science in Mining Engineering</div>
+        <ul class="bullets">
+          <li data-i18n="eduClub">Member of the Society for Mining, Metallurgy & Exploration (SME) club.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills & Software -->
+    <section>
+      <h2 data-i18n="skillsTitle">Skills & Software</h2>
+      <div class="skills-list">
+        <span class="skill-tag">GEOVIA Surpac</span>
+        <span class="skill-tag">MapInfo Professional</span>
+        <span class="skill-tag">Isatis Neo</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Data Automation</span>
+        <span class="skill-tag">Mine Planning</span>
+        <span class="skill-tag">Excel</span>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        label: "English",
+        name: "Ramazan Rakhman",
+        bio: "B.Sc. Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.",
+        location: "Almaty, Kazakhstan",
+        workTitle: "Work Experience",
+        badgeInternship: "Internship",
+        badgeResearch: "Research",
+        badgeGrant: "Alash Grant (2023)",
+        dateAman: "July 2026 — Present",
+        roleAman: "QA Intern",
+        aman1: "Reviewed AI-flagged security incidents across school and university camera feeds to identify false positives.",
+        aman2: "Built a Python pipeline to label and organize 400+ incident videos into a structured dataset with automated metadata.",
+        dateNu2: "May 2026 — Present",
+        roleNu2: "Research Assistant (Rockburst & Geomechanics)",
+        nu2_1: "Conducted literature reviews and conceptual studies of rockburst mechanisms, hazard assessment, and risk mitigation.",
+        nu2_2: "Developed preliminary laboratory research plans focused on brittle failure and energy-based rockburst proneness criteria.",
+        roleKaz: "Intern, Mine Planning Section",
+        kaz1: "Gained practical understanding of mine planning workflows and open-pit production operations.",
+        kaz2: "Assisted with drilling and blasting designs using GEOVIA Surpac and actual production data.",
+        kaz3: "Learned key safety requirements and monitored drilling, blasting, loading, and hauling operations on site.",
+        roleNu1: "Research Assistant (CCS)",
+        nu1_1: "Reviewed academic research on CO₂ Capture and Storage (CCS), focusing on the role of fault gouge and fault zones.",
+        nu1_2: "Observed and assisted in laboratory tests including core flooding, uniaxial compression, and permeability testing.",
+        roleVolkov: "Intern, Digital Geological Data Processing",
+        volkov1: "Utilized MapInfo Professional to digitize lithological sections, samples, and ore interval parameters.",
+        volkov2: "Systematized geological data and assisted in team project coordination and office schedule management.",
+        eduTitle: "Education",
+        eduDegree: "Bachelor of Science in Mining Engineering",
+        eduClub: "Member of the Society for Mining, Metallurgy & Exploration (SME) student chapter.",
+        skillsTitle: "Skills & Software"
+      },
+      kk: {
+        label: "Қазақша",
+        name: "Рамазан Рахман",
+        bio: "Назарбаев Университетінің тау-кен ісі мамандығының студенті. Кеніштерді жоспарлау, геомеханикалық талдау және Python көмегімен деректерді өңдеуде тәжірибесі бар.",
+        location: "Алматы, Қазақстан",
+        workTitle: "Жұмыс тәжірибесі",
+        badgeInternship: "Тағылымдама",
+        badgeResearch: "Зерттеу",
+        badgeGrant: "«Алаш» гранты (2023)",
+        dateAman: "Шілде 2026 — Қазіргі уақыт",
+        roleAman: "QA тағылымдамашысы",
+        aman1: "Жалған анықтауларды анықтау үшін мектеп және университет камераларынан AI белгілеген қауіпсіздік оқиғаларын тексерді.",
+        aman2: "400-ден астам бейнені белгілеп, құрылымдалған деректер жиынтығына жинақтайтын Python құбырын әзірледі.",
+        dateNu2: "Мамыр 2026 — Қазіргі уақыт",
+        roleNu2: "Зерттеуші көмекшісі (Тау соққысы және геомеханика)",
+        nu2_1: "Тау соққысы механизмдері, қауіпті бағалау және тәуекелдерді азайту бойынша әдебиеттерге концептуалды зерттеу жүргізді.",
+        nu2_2: "Морт сыну және энергияға негізделген соққыға бейімділік критерийлері бойынша зертханалық жоспар әзірледі.",
+        roleKaz: "Тағылымдамашы, Кеніштерді жоспарлау бөлімі",
+        kaz1: "Кенішті жоспарлау және карьердегі ашық өндірістік процестер бойынша практикалық білім алды.",
+        kaz2: "GEOVIA Surpac бағдарламасын және нақты өндірістік деректерді пайдаланып, бұрғылау-жару жобаларына көмектесті.",
+        kaz3: "Қауіпсіздік техникасымен танысып, карьерде бұрғылау, жару, тиеу және тасымалдау жұмыстарын бақылады.",
+        roleNu1: "Зерттеуші көмекшісі (CCS)",
+        nu1_1: "Көмірқышқыл газын (CO₂) ұстау және сақтау бойынша ғылыми жұмыстарды, соның ішінде жарықшақты аймақтардың рөлін талдады.",
+        nu1_2: "Кернді суландыру, біросьтік қысу және өткізгіштік сынақтарын қамтитын зертханалық сынақтарға қатысты.",
+        roleVolkov: "Тағылымдамашы, Геологиялық деректерді цифрлық өңдеу",
+        volkov1: "MapInfo Professional арқылы литологиялық тіліктерді, үлгілерді және кен аралықтарының параметрлерін цифрлады.",
+        volkov2: "Геологиялық ақпаратты жүйелеп, тапсырмаларды үйлестіру мен жұмыс кестесін жүргізуге атсалысты.",
+        eduTitle: "Білім",
+        eduDegree: "Тау-кен ісі саласындағы ғылым бакалавры (B.Sc.)",
+        eduClub: "Society for Mining, Metallurgy & Exploration (SME) студенттік клубының мүшесі.",
+        skillsTitle: "Дағдылар мен бағдарламалар"
+      },
+      ru: {
+        label: "Русский",
+        name: "Рамазан Рахман",
+        bio: "Студент горного дела в Назарбаев Университете с практическим опытом в проектировании горных работ, геомеханике и автоматизации данных на Python.",
+        location: "Алматы, Казахстан",
+        workTitle: "Опыт работы",
+        badgeInternship: "Стажировка",
+        badgeResearch: "Исследования",
+        badgeGrant: "Грант «Алаш» (2023)",
+        dateAman: "Июль 2026 — По настоящее время",
+        roleAman: "QA-стажер",
+        aman1: "Проводил анализ ложных срабатываний моделей распознавания инцидентов с камер школ и университетов.",
+        aman2: "Разработал Python-пайплайн для автоматической разметки метаданных и организации 400+ видеоинцидентов в датасет.",
+        dateNu2: "Май 2026 — По настоящее время",
+        roleNu2: "Ассистент-исследователь (Горные удары и геомеханика)",
+        nu2_1: "Провел обзор литературы по механизмам горных ударов, оценке опасностей, мониторингу и методам снижения рисков.",
+        nu2_2: "Разработал план лабораторных испытаний с акцентом на хрупкое разрушение и энергетические критерии удароопасности.",
+        roleKaz: "Стажер, Отдел горного планирования",
+        kaz1: "Изучил производственные процессы открытых горных работ и регламенты горного планирования.",
+        kaz2: "Участвовал в проектировании буровзрывных работ (БВР) в программе GEOVIA Surpac с реальными данными производства.",
+        kaz3: "Освоил требования промышленной безопасности и наблюдал за процессами бурения, взрывания, погрузки и откатки.",
+        roleNu1: "Ассистент-исследователь (CCS)",
+        nu1_1: "Изучал научные статьи по улавливанию и хранению CO₂ (CCS) с упором на роль тектонических разломов и глин трения.",
+        nu1_2: "Участвовал в лабораторных испытаниях: фильтрации керна, одноосном сжатии и определении проницаемости.",
+        roleVolkov: "Стажер отдела цифровой обработки геологических данных",
+        volkov1: "Оцифровывал литологические разрезы, образцы и параметры рудных интервалов в MapInfo Professional.",
+        volkov2: "Систематизировал геологические данные и участвовал в приоритизации рабочих задач отдела.",
+        eduTitle: "Образование",
+        eduDegree: "Бакалавр наук по горному делу (B.Sc.)",
+        eduClub: "Член студенческого отделения Society for Mining, Metallurgy & Exploration (SME).",
+        skillsTitle: "Навыки и программы"
+      }
+    };
+
+    const toggleBtn = document.getElementById("langToggleBtn");
+    const langMenu = document.getElementById("langMenu");
+    const currentLangLabel = document.getElementById("currentLangLabel");
+    const langOptions = document.querySelectorAll(".lang-option");
+
+    function setLanguage(lang) {
+      const selected = translations[lang] ? lang : "en";
+      const dict = translations[selected];
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) {
+          el.textContent = dict[key];
+        }
+      });
+
+      currentLangLabel.textContent = dict.label;
+      localStorage.setItem("preferred_lang", selected);
+
+      langOptions.forEach((opt) => {
+        opt.classList.toggle("active", opt.getAttribute("data-lang") === selected);
+      });
+    }
+
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      langMenu.classList.toggle("show");
+    });
+
+    langOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        const lang = option.getAttribute("data-lang");
+        setLanguage(lang);
+        langMenu.classList.remove("show");
+      });
+    });
+
+    document.addEventListener("click", () => {
+      langMenu.classList.remove("show");
+    });
+
+    const savedLang = localStorage.getItem("preferred_lang") || "en";
+    setLanguage(savedLang);
+  </script>
+</body>
+</html>
