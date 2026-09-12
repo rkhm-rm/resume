@@ -211,6 +211,12 @@
     .company {
       font-weight: 600;
       font-size: 1rem;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .company:hover {
+      text-decoration: underline;
     }
 
     .badge {
@@ -521,8 +527,9 @@
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
-            <span class="company">Aman Startup</span>
+            <a class="company" href="https://aman.org.kz/" target="_blank">Aman Startup</a>
             <span class="badge" data-i18n="badgeInternship">Internship</span>
+            <span class="badge" data-i18n="badgePartTime">Part-time</span>
           </div>
           <span class="date" data-i18n="dateAman">July 2026 — Present</span>
         </div>
@@ -536,7 +543,7 @@
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
-            <span class="company">Nazarbayev University (SMG)</span>
+            <a class="company" href="https://nu.edu.kz/" target="_blank">Nazarbayev University</a>
             <span class="badge" data-i18n="badgeResearch">Research</span>
           </div>
           <span class="date" data-i18n="dateNu2">May 2026 — Present</span>
@@ -551,7 +558,7 @@
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
-            <span class="company">KAZ Minerals, Aktogay</span>
+            <a class="company" href="https://www.kazminerals.com/" target="_blank">KAZ Minerals, Aktogay</a>
             <span class="badge" data-i18n="badgeInternship">Internship</span>
           </div>
           <span class="date">May 2026</span>
@@ -567,7 +574,7 @@
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
-            <span class="company">Nazarbayev University (SMG)</span>
+            <a class="company" href="https://nu.edu.kz/" target="_blank">Nazarbayev University</a>
             <span class="badge" data-i18n="badgeResearch">Research</span>
           </div>
           <span class="date">June 2025 — Oct 2025</span>
@@ -582,7 +589,7 @@
       <div class="item">
         <div class="item-header">
           <div class="item-title-group">
-            <span class="company">JSC "Volkovgeology", Kazatomprom</span>
+            <a class="company" href="https://www.kazatomprom.kz/en" target="_blank">JSC "Volkovgeology", Kazatomprom</a>
             <span class="badge" data-i18n="badgeInternship">Internship</span>
           </div>
           <span class="date">Dec 2024 — Jan 2025</span>
@@ -688,6 +695,7 @@
         location: "Astana, Kazakhstan",
         workTitle: "Work Experience",
         badgeInternship: "Internship",
+        badgePartTime: "Part-time",
         badgeResearch: "Research",
         badgeGrant: "Alash Grant (2023)",
         dateAman: "July 2026 — Present",
@@ -726,6 +734,7 @@
         location: "Астана, Қазақстан",
         workTitle: "Жұмыс тәжірибесі",
         badgeInternship: "Тағылымдама",
+        badgePartTime: "Жарты күндік",
         badgeResearch: "Зерттеу",
         badgeGrant: "«Алаш» гранты (2023)",
         dateAman: "Шілде 2026 — Қазіргі уақыт",
@@ -764,6 +773,7 @@
         location: "Астана, Казахстан",
         workTitle: "Опыт работы",
         badgeInternship: "Стажировка",
+        badgePartTime: "Неполный день",
         badgeResearch: "Исследования",
         badgeGrant: "Грант «Алаш» (2023)",
         dateAman: "Июль 2026 — По настоящее время",
