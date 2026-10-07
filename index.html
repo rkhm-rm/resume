@@ -4,9 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ramazan Rakhman — Resume</title>
-  
+
   <!-- "RR" Webpage Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111827'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, sans-serif' font-size='44' font-weight='700' fill='%23ffffff'>RR</text></svg>">
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111827'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, sans-serif' font-size='44' font-weight='700' fill='%23ffffff'>RR</text></svg>"
+  />
 
   <style>
     :root {
@@ -27,7 +30,14 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.5;
@@ -39,7 +49,7 @@
       margin: 0 auto;
     }
 
-    /* Top Row: Avatar (Left) & Language Switcher (Right) */
+    /* Top Row */
     .top-row {
       display: flex;
       justify-content: space-between;
@@ -115,7 +125,7 @@
       font-weight: 600;
     }
 
-    /* Intro Section */
+    /* Intro */
     .intro-section {
       margin-bottom: 32px;
     }
@@ -267,7 +277,7 @@
       font-weight: 500;
     }
 
-    /* Fixed Bottom Footer Prompt */
+    /* Bottom Command Bar */
     .cmd-footer-bar {
       position: fixed;
       bottom: 0;
@@ -296,7 +306,7 @@
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     }
 
-    /* Command Palette Modal */
+    /* Command Palette */
     .cmd-backdrop {
       display: none;
       position: fixed;
@@ -319,14 +329,23 @@
       max-width: 480px;
       border-radius: 12px;
       border: 1px solid var(--border);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.05);
       overflow: hidden;
       animation: modalFade 0.15s ease-out;
     }
 
     @keyframes modalFade {
-      from { opacity: 0; transform: scale(0.97); }
-      to { opacity: 1; transform: scale(1); }
+      from {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .cmd-header {
@@ -396,7 +415,8 @@
       transition: background-color 0.12s ease;
     }
 
-    .cmd-item:hover, .cmd-item.selected {
+    .cmd-item:hover,
+    .cmd-item.selected {
       background: var(--badge-bg);
     }
 
@@ -460,11 +480,30 @@
 
     <!-- Top Row -->
     <div class="top-row">
-      <img src="3x4photo_Ramazan.jpg" alt="Ramazan Rakhman" class="avatar" />
+
+      <img
+        src="3x4photo_Ramazan.jpg"
+        alt="Ramazan Rakhman"
+        class="avatar"
+      />
 
       <div class="lang-dropdown">
-        <button class="lang-btn" id="langToggleBtn" type="button">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+        <button
+          class="lang-btn"
+          id="langToggleBtn"
+          type="button"
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="m5 8 6 6"/>
             <path d="m4 14 6-6 2-3"/>
             <path d="M2 5h12"/>
@@ -472,22 +511,52 @@
             <path d="m22 22-5-10-5 10"/>
             <path d="M14 18h6"/>
           </svg>
-          <span id="currentLangLabel">English</span>
+
+          <span id="currentLangLabel">
+            English
+          </span>
         </button>
 
-        <ul class="lang-menu" id="langMenu">
-          <li class="lang-option" data-lang="en">English</li>
-          <li class="lang-option" data-lang="kk">Қазақша</li>
-          <li class="lang-option" data-lang="ru">Русский</li>
+        <ul
+          class="lang-menu"
+          id="langMenu"
+        >
+          <li
+            class="lang-option"
+            data-lang="en"
+          >
+            English
+          </li>
+
+          <li
+            class="lang-option"
+            data-lang="kk"
+          >
+            Қазақша
+          </li>
+
+          <li
+            class="lang-option"
+            data-lang="ru"
+          >
+            Русский
+          </li>
         </ul>
+
       </div>
     </div>
 
     <!-- Intro -->
     <header class="intro-section">
-      <h1 data-i18n="name">Ramazan Rakhman</h1>
 
-      <p class="bio" data-i18n="bio">
+      <h1 data-i18n="name">
+        Ramazan Rakhman
+      </h1>
+
+      <p
+        class="bio"
+        data-i18n="bio"
+      >
         Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.
       </p>
 
@@ -497,293 +566,743 @@
         class="location-link"
         title="Open Astana in Google Maps"
       >
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+          />
           <circle cx="12" cy="10" r="3"/>
         </svg>
-        <span data-i18n="location">Astana, Kazakhstan</span>
+
+        <span data-i18n="location">
+          Astana, Kazakhstan
+        </span>
       </a>
 
       <div class="contacts">
 
-        <a href="mailto:rakhmanramazan@gmail.com" class="icon-btn" title="Send Email">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect width="20" height="16" x="2" y="4" rx="2"/>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        <!-- Email -->
+        <a
+          href="mailto:rakhmanramazan@gmail.com"
+          class="icon-btn"
+          title="Send Email"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect
+              width="20"
+              height="16"
+              x="2"
+              y="4"
+              rx="2"
+            />
+            <path
+              d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+            />
           </svg>
         </a>
 
-        <a href="tel:+77712548222" class="icon-btn" title="Call Phone">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        <!-- Phone -->
+        <a
+          href="tel:+77712548222"
+          class="icon-btn"
+          title="Call Phone"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            />
           </svg>
         </a>
 
+        <!-- LinkedIn -->
         <a
           href="https://linkedin.com/in/ramazan-rakhman-3200222b9"
           target="_blank"
           class="icon-btn"
           title="LinkedIn Profile"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect width="4" height="12" x="2" y="9"/>
-            <circle cx="4" cy="4" r="2"/>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            />
+            <rect
+              width="4"
+              height="12"
+              x="2"
+              y="9"
+            />
+            <circle
+              cx="4"
+              cy="4"
+              r="2"
+            />
           </svg>
         </a>
 
+        <!-- GitHub -->
         <a
           href="https://github.com/rkhm-rm"
           target="_blank"
           class="icon-btn"
           title="GitHub Profile"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-            <path d="M9 18c-4.51 2-5-2-7-2"/>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 1-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+            />
+            <path
+              d="M9 18c-4.51 2-5-2-7-2"
+            />
           </svg>
         </a>
 
       </div>
     </header>
 
-    <!-- Work Experience -->
-    <section>
-      <h2 data-i18n="workTitle">Work Experience</h2>
+    <!-- ===================================================== -->
+    <!-- WORK EXPERIENCE -->
+    <!-- ===================================================== -->
 
+    <section>
+      <h2 data-i18n="workTitle">
+        Work Experience
+      </h2>
+
+      <!-- Aman -->
       <div class="item">
+
         <div class="item-header">
+
           <div class="item-title-group">
-            <a class="company" href="https://aman.org.kz/" target="_blank">Aman Startup</a>
-            <span class="badge" data-i18n="badgeInternship">Internship</span>
-            <span class="badge" data-i18n="badgePartTime">Part-time</span>
+
+            <a
+              class="company"
+              href="https://aman.org.kz/"
+              target="_blank"
+            >
+              Aman Startup
+            </a>
+
+            <span
+              class="badge"
+              data-i18n="badgeInternship"
+            >
+              Internship
+            </span>
+
+            <span
+              class="badge"
+              data-i18n="badgePartTime"
+            >
+              Part-time
+            </span>
+
           </div>
-          <span class="date" data-i18n="dateAman">July 2026 — Present</span>
+
+          <span
+            class="date"
+            data-i18n="dateAman"
+          >
+            July 2026 — Present
+          </span>
+
         </div>
 
-        <div class="role" data-i18n="roleAman">QA Intern</div>
+        <div
+          class="role"
+          data-i18n="roleAman"
+        >
+          QA Intern
+        </div>
 
         <ul class="bullets">
           <li data-i18n="aman1">
-            Reviewed AI-flagged security incidents across school and university camera feeds to identify false positives.
-          </li>
-          <li data-i18n="aman2">
             Built a Python pipeline to label and organize 400+ incident videos into a structured dataset with automated metadata.
           </li>
         </ul>
+
       </div>
 
+      <!-- Rockburst Research -->
       <div class="item">
+
         <div class="item-header">
+
           <div class="item-title-group">
-            <a class="company" href="https://nu.edu.kz/" target="_blank">Nazarbayev University</a>
-            <span class="badge" data-i18n="badgeResearch">Research</span>
+
+            <a
+              class="company"
+              href="https://nu.edu.kz/"
+              target="_blank"
+            >
+              Nazarbayev University
+            </a>
+
+            <span
+              class="badge"
+              data-i18n="badgeResearch"
+            >
+              Research
+            </span>
+
           </div>
-          <span class="date" data-i18n="dateNu2">May 2026 — Present</span>
+
+          <span
+            class="date"
+            data-i18n="dateNu2"
+          >
+            May 2026 — Present
+          </span>
+
         </div>
 
-        <div class="role" data-i18n="roleNu2">
-          Research Assistant (Rockburst & Geomechanics)
+        <div
+          class="role"
+          data-i18n="roleNu2"
+        >
+          Research Assistant – Rockburst &amp; Geomechanics
         </div>
 
         <ul class="bullets">
+
           <li data-i18n="nu2_1">
             Conducted literature reviews and conceptual studies of rockburst mechanisms, hazard assessment, and risk mitigation.
           </li>
+
           <li data-i18n="nu2_2">
             Developed preliminary laboratory research plans focused on brittle failure and energy-based rockburst proneness criteria.
           </li>
+
         </ul>
+
       </div>
 
+      <!-- KAZ Minerals -->
       <div class="item">
+
         <div class="item-header">
+
           <div class="item-title-group">
-            <a class="company" href="https://www.kazminerals.com/" target="_blank">
+
+            <a
+              class="company"
+              href="https://www.kazminerals.com/"
+              target="_blank"
+            >
               KAZ Minerals, Aktogay
             </a>
-            <span class="badge" data-i18n="badgeInternship">Internship</span>
+
+            <span
+              class="badge"
+              data-i18n="badgeInternship"
+            >
+              Internship
+            </span>
+
           </div>
-          <span class="date">May 2026</span>
+
+          <span class="date">
+            May 2026
+          </span>
+
         </div>
 
-        <div class="role" data-i18n="roleKaz">
+        <div
+          class="role"
+          data-i18n="roleKaz"
+        >
           Intern, Mine Planning Section
         </div>
 
         <ul class="bullets">
+
           <li data-i18n="kaz1">
             Gained practical understanding of mine planning workflows and open-pit production operations.
           </li>
+
           <li data-i18n="kaz2">
             Assisted with drilling and blasting designs using GEOVIA Surpac and actual production data.
           </li>
+
           <li data-i18n="kaz3">
-            Learned key safety requirements and monitored drilling, blasting, loading, and hauling operations on site.
+            Observed drilling, blasting, loading, and hauling operations while learning key mine safety requirements.
           </li>
+
         </ul>
+
       </div>
 
+      <!-- CCS Research -->
       <div class="item">
+
         <div class="item-header">
+
           <div class="item-title-group">
-            <a class="company" href="https://nu.edu.kz/" target="_blank">Nazarbayev University</a>
-            <span class="badge" data-i18n="badgeResearch">Research</span>
+
+            <a
+              class="company"
+              href="https://nu.edu.kz/"
+              target="_blank"
+            >
+              Nazarbayev University
+            </a>
+
+            <span
+              class="badge"
+              data-i18n="badgeResearch"
+            >
+              Research
+            </span>
+
           </div>
-          <span class="date">June 2025 — Oct 2025</span>
+
+          <span
+            class="date"
+            data-i18n="dateNu1"
+          >
+            June 2025 — Oct. 2025
+          </span>
+
         </div>
 
-        <div class="role" data-i18n="roleNu1">
-          Research Assistant (CCS)
+        <div
+          class="role"
+          data-i18n="roleNu1"
+        >
+          Research Assistant – CO₂ Capture and Storage (CCS)
         </div>
 
         <ul class="bullets">
+
           <li data-i18n="nu1_1">
-            Reviewed academic research on CO₂ Capture and Storage (CCS), focusing on the role of fault gouge and fault zones.
+            Reviewed academic research on CO₂ Capture and Storage, focusing on fault gouge and fault-zone behavior.
           </li>
+
           <li data-i18n="nu1_2">
             Observed and assisted in laboratory tests including core flooding, uniaxial compression, and permeability testing.
           </li>
+
         </ul>
+
       </div>
 
+      <!-- Volkovgeology -->
       <div class="item">
+
         <div class="item-header">
+
           <div class="item-title-group">
-            <a class="company" href="https://www.kazatomprom.kz/en" target="_blank">
-              JSC "Volkovgeology", Kazatomprom
+
+            <a
+              class="company"
+              href="https://www.kazatomprom.kz/en"
+              target="_blank"
+            >
+              JSC “Volkovgeology”, Kazatomprom
             </a>
-            <span class="badge" data-i18n="badgeInternship">Internship</span>
+
+            <span
+              class="badge"
+              data-i18n="badgeInternship"
+            >
+              Internship
+            </span>
+
           </div>
-          <span class="date">Dec 2024 — Jan 2025</span>
+
+          <span
+            class="date"
+            data-i18n="dateVolkov"
+          >
+            Dec. 2024 — Jan. 2025
+          </span>
+
         </div>
 
-        <div class="role" data-i18n="roleVolkov">
+        <div
+          class="role"
+          data-i18n="roleVolkov"
+        >
           Intern, Digital Geological Data Processing
         </div>
 
         <ul class="bullets">
+
           <li data-i18n="volkov1">
-            Utilized MapInfo Professional to digitize lithological sections, samples, and ore interval parameters.
+            Used MapInfo Professional to digitize lithological sections, geological samples, and ore interval parameters.
           </li>
+
           <li data-i18n="volkov2">
-            Systematized geological data and assisted in team project coordination and office schedule management.
+            Systematized geological data and supported team project coordination and office schedule management.
           </li>
+
         </ul>
+
       </div>
+
     </section>
 
-    <!-- Education -->
+    <!-- ===================================================== -->
+    <!-- EDUCATION -->
+    <!-- ===================================================== -->
+
     <section>
-      <h2 data-i18n="eduTitle">Education</h2>
+
+      <h2 data-i18n="eduTitle">
+        Education
+      </h2>
 
       <div class="item">
+
         <div class="item-header">
+
           <div class="item-title-group">
-            <span class="company">Nazarbayev University</span>
-            <span class="badge" data-i18n="badgeGrant">Alash Grant (2023)</span>
+
+            <span class="company">
+              Nazarbayev University
+            </span>
+
+            <span
+              class="badge"
+              data-i18n="badgeGrant"
+            >
+              Alash Grant (2023)
+            </span>
+
           </div>
 
-          <span class="date">Aug 2023 — May 2027</span>
+          <span class="date">
+            Aug. 2023 — May 2027
+          </span>
+
         </div>
 
-        <div class="role" data-i18n="eduDegree">
-          Bachelor of Science in Mining Engineering (CGPA: 3.11/4)
+        <div
+          class="role"
+          data-i18n="eduDegree"
+        >
+          Bachelor of Science in Mining Engineering, CGPA: 3.11/4
         </div>
 
         <ul class="bullets">
-          <li data-i18n="eduClub">
-            Member of the Society for Mining, Metallurgy & Exploration (SME) student club (2024 — 2025).
+
+          <li data-i18n="eduCoursework">
+            Current relevant coursework: Mine Planning, Mine Design Project I, Mining Geotechnical Engineering, Mine Ventilation.
           </li>
+
+          <li data-i18n="eduClub">
+            Member of the Society for Mining, Metallurgy &amp; Exploration (SME) student club, 2024–2025.
+          </li>
+
         </ul>
+
       </div>
+
     </section>
 
-    <!-- Projects -->
-    <section>
-      <h2 data-i18n="projectsTitle">Projects</h2>
+    <!-- ===================================================== -->
+    <!-- PROJECTS -->
+    <!-- ===================================================== -->
 
+    <section>
+
+      <h2 data-i18n="projectsTitle">
+        Selected Academic Projects
+      </h2>
+
+      <!-- Surface Mine Design -->
       <div class="item">
+
         <div class="item-header">
+
           <div class="item-title-group">
-            <span class="company" data-i18n="surfaceProjectTitle">
+
+            <span
+              class="company"
+              data-i18n="surfaceProjectTitle"
+            >
               Surface Mine Design Project — Micromine Origin &amp; Beyond
             </span>
+
           </div>
 
-          <span class="date">2026</span>
-        </div>
+          <span class="date">
+            2026
+          </span>
 
-        <div class="role" data-i18n="surfaceProjectCourse">
-          Mine Design Project I, Nazarbayev University
         </div>
 
         <ul class="bullets">
-          <li data-i18n="surfaceProjectDesc">
-            Developed a preliminary open-pit mine design from a gold block model, including pit optimization, engineered pit design, production scheduling, fleet estimation, waste-dump and haul-road concepts, and preliminary economic evaluation.
+
+          <li data-i18n="surfaceProjectDesc1">
+            Developed a preliminary open-pit mine design from a gold block model using Micromine Origin &amp; Beyond, including pit optimization, final pit design, and production scheduling.
           </li>
+
+          <li data-i18n="surfaceProjectDesc2">
+            Performed fleet planning, waste-dump and haul-road conceptual design, and preliminary economic evaluation to support mine-planning decisions.
+          </li>
+
         </ul>
+
       </div>
 
+      <!-- Resource Estimation -->
       <div class="item">
+
         <div class="item-header">
+
           <div class="item-title-group">
-            <span class="company" data-i18n="resourceProjectTitle">
+
+            <span
+              class="company"
+              data-i18n="resourceProjectTitle"
+            >
               Resource Estimation Project — Isatis.neo
             </span>
+
           </div>
 
-          <span class="date">2026</span>
-        </div>
+          <span class="date">
+            2026
+          </span>
 
-        <div class="role" data-i18n="resourceProjectCourse">
-          MINE 304 Resource Estimation, Nazarbayev University
         </div>
 
         <ul class="bullets">
-          <li data-i18n="resourceProjectDesc">
-            Built Pb and Zn resource block models using geostatistical methods in Isatis.neo. Performed compositing, variogram modeling, ordinary kriging, cross-validation, resource classification, and economic cut-off analysis to support resource evaluation and downstream mine-planning decisions.
+
+          <li data-i18n="resourceProjectDesc1">
+            Built Pb and Zn resource block models using geostatistical methods, including compositing, variography, and ordinary kriging.
           </li>
+
+          <li data-i18n="resourceProjectDesc2">
+            Performed model validation, resource classification, and economic cut-off analysis to support resource evaluation and downstream mine planning.
+          </li>
+
         </ul>
+
       </div>
+
     </section>
 
-    <!-- Skills & Software -->
-    <section>
-      <h2 data-i18n="skillsTitle">Skills & Software</h2>
+    <!-- ===================================================== -->
+    <!-- TECHNICAL SKILLS -->
+    <!-- ===================================================== -->
 
-      <div class="skills-list">
-        <span class="skill-tag">Micromine Beyond</span>
-        <span class="skill-tag">Micromine Origin</span>
-        <span class="skill-tag">VentSim</span>
-        <span class="skill-tag">GEOVIA Surpac</span>
-        <span class="skill-tag">RS2</span>
-        <span class="skill-tag">QGIS</span>
-        <span class="skill-tag">MapInfo Professional</span>
-        <span class="skill-tag">Isatis Neo</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">VS Code</span>
-        <span class="skill-tag">Excel</span>
+    <section>
+
+      <h2 data-i18n="skillsTitle">
+        Technical Skills
+      </h2>
+
+      <!-- Mining Software -->
+      <div class="item">
+
+        <div
+          class="role"
+          data-i18n="skillsMining"
+        >
+          Mining &amp; Resource Software
+        </div>
+
+        <div class="skills-list">
+
+          <span class="skill-tag">
+            Micromine Origin
+          </span>
+
+          <span class="skill-tag">
+            Micromine Beyond
+          </span>
+
+          <span class="skill-tag">
+            GEOVIA Surpac
+          </span>
+
+          <span class="skill-tag">
+            Isatis.neo
+          </span>
+
+        </div>
+
       </div>
+
+      <!-- Geotechnical -->
+      <div class="item">
+
+        <div
+          class="role"
+          data-i18n="skillsGeoTech"
+        >
+          Geotechnical &amp; Ventilation
+        </div>
+
+        <div class="skills-list">
+
+          <span class="skill-tag">
+            RS2
+          </span>
+
+          <span class="skill-tag">
+            VentSim
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- GIS -->
+      <div class="item">
+
+        <div
+          class="role"
+          data-i18n="skillsGis"
+        >
+          GIS &amp; Geological Data
+        </div>
+
+        <div class="skills-list">
+
+          <span class="skill-tag">
+            QGIS
+          </span>
+
+          <span class="skill-tag">
+            MapInfo Professional
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- Programming -->
+      <div class="item">
+
+        <div
+          class="role"
+          data-i18n="skillsProgramming"
+        >
+          Programming &amp; Data
+        </div>
+
+        <div class="skills-list">
+
+          <span class="skill-tag">
+            Python
+          </span>
+
+          <span class="skill-tag">
+            Excel
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- Development -->
+      <div class="item">
+
+        <div
+          class="role"
+          data-i18n="skillsDev"
+        >
+          Development Tools
+        </div>
+
+        <div class="skills-list">
+
+          <span class="skill-tag">
+            Visual Studio Code
+          </span>
+
+          <span class="skill-tag">
+            GitHub
+          </span>
+
+        </div>
+
+      </div>
+
     </section>
 
   </div>
 
   <!-- Bottom Command Bar -->
-  <footer class="cmd-footer-bar" id="openCmdBar">
+  <footer
+    class="cmd-footer-bar"
+    id="openCmdBar"
+  >
     <span data-i18n="cmdBar">
       Press <kbd>Ctrl + Z</kbd> or tap here to open the command menu
     </span>
   </footer>
 
   <!-- Command Palette -->
-  <div class="cmd-backdrop" id="cmdBackdrop">
-    <div class="cmd-modal" id="cmdModal">
+  <div
+    class="cmd-backdrop"
+    id="cmdBackdrop"
+  >
+
+    <div
+      class="cmd-modal"
+      id="cmdModal"
+    >
 
       <div class="cmd-header">
-        <svg class="cmd-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.3-4.3"/>
+
+        <svg
+          class="cmd-search-icon"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+
+          <path
+            d="m21 21-4.3-4.3"
+          />
         </svg>
 
         <input
@@ -794,62 +1313,171 @@
           autocomplete="off"
         />
 
-        <button class="cmd-close-btn" id="cmdCloseBtn" type="button">
+        <button
+          class="cmd-close-btn"
+          id="cmdCloseBtn"
+          type="button"
+        >
           &times;
         </button>
+
       </div>
 
-      <div class="cmd-body" id="cmdList">
+      <div
+        class="cmd-body"
+        id="cmdList"
+      >
 
-        <div class="cmd-group-label" data-i18n="cmdActions">
+        <div
+          class="cmd-group-label"
+          data-i18n="cmdActions"
+        >
           Actions
         </div>
 
-        <div class="cmd-item" id="cmdActionPrint">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 6 2 18 2 18 9"/>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-            <rect width="12" height="8" x="6" y="14"/>
+        <div
+          class="cmd-item"
+          id="cmdActionPrint"
+        >
+
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline
+              points="6 9 6 2 18 2 18 9"
+            />
+
+            <path
+              d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+            />
+
+            <rect
+              width="12"
+              height="8"
+              x="6"
+              y="14"
+            />
           </svg>
 
-          <span data-i18n="cmdPrint">Print</span>
+          <span data-i18n="cmdPrint">
+            Print
+          </span>
+
         </div>
 
-        <div class="cmd-group-label" data-i18n="cmdLinks">
+        <div
+          class="cmd-group-label"
+          data-i18n="cmdLinks"
+        >
           Links
         </div>
 
-        <a href="https://rkhm-rm.github.io/resume" class="cmd-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-            <path d="M2 12h20"/>
+        <!-- Website -->
+        <a
+          href="https://rkhm-rm.github.io/resume"
+          class="cmd-item"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+            />
+
+            <path
+              d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+            />
+
+            <path
+              d="M2 12h20"
+            />
           </svg>
 
-          <span data-i18n="cmdSite">Personal website</span>
+          <span data-i18n="cmdSite">
+            Personal website
+          </span>
+
         </a>
 
-        <a href="https://github.com/rkhm-rm" target="_blank" class="cmd-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-            <path d="M9 18c-4.51 2-5-2-7-2"/>
+        <!-- GitHub -->
+        <a
+          href="https://github.com/rkhm-rm"
+          target="_blank"
+          class="cmd-item"
+        >
+
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 1-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+            />
+
+            <path
+              d="M9 18c-4.51 2-5-2-7-2"
+            />
           </svg>
 
-          <span>GitHub</span>
+          <span>
+            GitHub
+          </span>
+
         </a>
 
+        <!-- LinkedIn -->
         <a
           href="https://linkedin.com/in/ramazan-rakhman-3200222b9"
           target="_blank"
           class="cmd-item"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect width="4" height="12" x="2" y="9"/>
-            <circle cx="4" cy="4" r="2"/>
+
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            />
+
+            <rect
+              width="4"
+              height="12"
+              x="2"
+              y="9"
+            />
+
+            <circle
+              cx="4"
+              cy="4"
+              r="2"
+            />
           </svg>
 
-          <span>LinkedIn</span>
+          <span>
+            LinkedIn
+          </span>
+
         </a>
 
       </div>
@@ -859,302 +1487,721 @@
   <script>
     const translations = {
 
+      /* ===================================================== */
+      /* ENGLISH */
+      /* ===================================================== */
+
       en: {
         label: "English",
+
         name: "Ramazan Rakhman",
-        bio: "Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.",
-        location: "Astana, Kazakhstan",
 
-        workTitle: "Work Experience",
-        badgeInternship: "Internship",
-        badgePartTime: "Part-time",
-        badgeResearch: "Research",
-        badgeGrant: "Alash Grant (2023)",
+        bio:
+          "Mining Engineering student at Nazarbayev University with experience in mine planning, geotechnical analysis, and Python-driven automation.",
 
-        dateAman: "July 2026 — Present",
-        roleAman: "QA Intern",
-        aman1: "Reviewed AI-flagged security incidents across school and university camera feeds to identify false positives.",
-        aman2: "Built a Python pipeline to label and organize 400+ incident videos into a structured dataset with automated metadata.",
+        location:
+          "Astana, Kazakhstan",
 
-        dateNu2: "May 2026 — Present",
-        roleNu2: "Research Assistant (Rockburst & Geomechanics)",
-        nu2_1: "Conducted literature reviews and conceptual studies of rockburst mechanisms, hazard assessment, and risk mitigation.",
-        nu2_2: "Developed preliminary laboratory research plans focused on brittle failure and energy-based rockburst proneness criteria.",
+        workTitle:
+          "Work Experience",
 
-        roleKaz: "Intern, Mine Planning Section",
-        kaz1: "Gained practical understanding of mine planning workflows and open-pit production operations.",
-        kaz2: "Assisted with drilling and blasting designs using GEOVIA Surpac and actual production data.",
-        kaz3: "Learned key safety requirements and monitored drilling, blasting, loading, and hauling operations on site.",
+        badgeInternship:
+          "Internship",
 
-        roleNu1: "Research Assistant (CCS)",
-        nu1_1: "Reviewed academic research on CO₂ Capture and Storage (CCS), focusing on the role of fault gouge and fault zones.",
-        nu1_2: "Observed and assisted in laboratory tests including core flooding, uniaxial compression, and permeability testing.",
+        badgePartTime:
+          "Part-time",
 
-        roleVolkov: "Intern, Digital Geological Data Processing",
-        volkov1: "Utilized MapInfo Professional to digitize lithological sections, samples, and ore interval parameters.",
-        volkov2: "Systematized geological data and assisted in team project coordination and office schedule management.",
+        badgeResearch:
+          "Research",
 
-        eduTitle: "Education",
-        eduDegree: "Bachelor of Science in Mining Engineering (CGPA: 3.11/4)",
-        eduClub: "Member of the Society for Mining, Metallurgy & Exploration (SME) student club (2024 — 2025).",
+        badgeGrant:
+          "Alash Grant (2023)",
 
-        projectsTitle: "Projects",
+        dateAman:
+          "July 2026 — Present",
 
-        surfaceProjectTitle: "Surface Mine Design Project — Micromine Origin & Beyond",
-        surfaceProjectCourse: "Mine Design Project I, Nazarbayev University",
-        surfaceProjectDesc: "Developed a preliminary open-pit mine design from a gold block model, including pit optimization, engineered pit design, production scheduling, fleet estimation, waste-dump and haul-road concepts, and preliminary economic evaluation.",
+        roleAman:
+          "QA Intern",
 
-        resourceProjectTitle: "Resource Estimation Project — Isatis.neo",
-        resourceProjectCourse: "MINE 304 Resource Estimation, Nazarbayev University",
-        resourceProjectDesc: "Built Pb and Zn resource block models using geostatistical methods in Isatis.neo. Performed compositing, variogram modeling, ordinary kriging, cross-validation, resource classification, and economic cut-off analysis to support resource evaluation and downstream mine-planning decisions.",
+        aman1:
+          "Built a Python pipeline to label and organize 400+ incident videos into a structured dataset with automated metadata.",
 
-        skillsTitle: "Skills & Software",
+        dateNu2:
+          "May 2026 — Present",
 
-        cmdBar: "Press <kbd>Ctrl + Z</kbd> or tap here to open the command menu",
-        cmdPlaceholder: "Type a command or search...",
-        cmdActions: "Actions",
-        cmdLinks: "Links",
-        cmdPrint: "Print",
-        cmdSite: "Personal website"
+        roleNu2:
+          "Research Assistant – Rockburst & Geomechanics",
+
+        nu2_1:
+          "Conducted literature reviews and conceptual studies of rockburst mechanisms, hazard assessment, and risk mitigation.",
+
+        nu2_2:
+          "Developed preliminary laboratory research plans focused on brittle failure and energy-based rockburst proneness criteria.",
+
+        roleKaz:
+          "Intern, Mine Planning Section",
+
+        kaz1:
+          "Gained practical understanding of mine planning workflows and open-pit production operations.",
+
+        kaz2:
+          "Assisted with drilling and blasting designs using GEOVIA Surpac and actual production data.",
+
+        kaz3:
+          "Observed drilling, blasting, loading, and hauling operations while learning key mine safety requirements.",
+
+        dateNu1:
+          "June 2025 — Oct. 2025",
+
+        roleNu1:
+          "Research Assistant – CO₂ Capture and Storage (CCS)",
+
+        nu1_1:
+          "Reviewed academic research on CO₂ Capture and Storage, focusing on fault gouge and fault-zone behavior.",
+
+        nu1_2:
+          "Observed and assisted in laboratory tests including core flooding, uniaxial compression, and permeability testing.",
+
+        dateVolkov:
+          "Dec. 2024 — Jan. 2025",
+
+        roleVolkov:
+          "Intern, Digital Geological Data Processing",
+
+        volkov1:
+          "Used MapInfo Professional to digitize lithological sections, geological samples, and ore interval parameters.",
+
+        volkov2:
+          "Systematized geological data and supported team project coordination and office schedule management.",
+
+        eduTitle:
+          "Education",
+
+        eduDegree:
+          "Bachelor of Science in Mining Engineering, CGPA: 3.11/4",
+
+        eduCoursework:
+          "Current relevant coursework: Mine Planning, Mine Design Project I, Mining Geotechnical Engineering, Mine Ventilation.",
+
+        eduClub:
+          "Member of the Society for Mining, Metallurgy & Exploration (SME) student club, 2024–2025.",
+
+        projectsTitle:
+          "Selected Academic Projects",
+
+        surfaceProjectTitle:
+          "Surface Mine Design Project — Micromine Origin & Beyond",
+
+        surfaceProjectDesc1:
+          "Developed a preliminary open-pit mine design from a gold block model using Micromine Origin & Beyond, including pit optimization, final pit design, and production scheduling.",
+
+        surfaceProjectDesc2:
+          "Performed fleet planning, waste-dump and haul-road conceptual design, and preliminary economic evaluation to support mine-planning decisions.",
+
+        resourceProjectTitle:
+          "Resource Estimation Project — Isatis.neo",
+
+        resourceProjectDesc1:
+          "Built Pb and Zn resource block models using geostatistical methods, including compositing, variography, and ordinary kriging.",
+
+        resourceProjectDesc2:
+          "Performed model validation, resource classification, and economic cut-off analysis to support resource evaluation and downstream mine planning.",
+
+        skillsTitle:
+          "Technical Skills",
+
+        skillsMining:
+          "Mining & Resource Software",
+
+        skillsGeoTech:
+          "Geotechnical & Ventilation",
+
+        skillsGis:
+          "GIS & Geological Data",
+
+        skillsProgramming:
+          "Programming & Data",
+
+        skillsDev:
+          "Development Tools",
+
+        cmdBar:
+          "Press <kbd>Ctrl + Z</kbd> or tap here to open the command menu",
+
+        cmdPlaceholder:
+          "Type a command or search...",
+
+        cmdActions:
+          "Actions",
+
+        cmdLinks:
+          "Links",
+
+        cmdPrint:
+          "Print",
+
+        cmdSite:
+          "Personal website"
       },
+
+      /* ===================================================== */
+      /* KAZAKH */
+      /* ===================================================== */
 
       kk: {
-        label: "Қазақша",
-        name: "Рамазан Рахман",
-        bio: "Назарбаев Университетінің тау-кен ісі мамандығының студенті. Кеніштерді жоспарлау, геомеханикалық талдау және Python көмегімен автоматтандыруда тәжірибесі бар.",
-        location: "Астана, Қазақстан",
+        label:
+          "Қазақша",
 
-        workTitle: "Жұмыс тәжірибесі",
-        badgeInternship: "Тағылымдама",
-        badgePartTime: "Жарты күндік",
-        badgeResearch: "Зерттеу",
-        badgeGrant: "«Алаш» гранты (2023)",
+        name:
+          "Рамазан Рахман",
 
-        dateAman: "Шілде 2026 — Қазіргі уақыт",
-        roleAman: "QA тағылымдамашысы",
-        aman1: "Жалған анықтауларды анықтау үшін мектеп және университет камераларынан AI белгілеген қауіпсіздік оқиғаларын тексерді.",
-        aman2: "400-ден астам бейнені белгілеп, құрылымдалған деректер жиынтығына жинақтайтын Python құбырын әзірледі.",
+        bio:
+          "Назарбаев Университетінің тау-кен ісі мамандығының студенті. Кеніштерді жоспарлау, геомеханикалық талдау және Python көмегімен автоматтандыруда тәжірибесі бар.",
 
-        dateNu2: "Мамыр 2026 — Қазіргі уақыт",
-        roleNu2: "Зерттеуші көмекшісі (Тау соққысы және геомеханика)",
-        nu2_1: "Тау соққысы механизмдері, қауіпті бағалау және тәуекелдерді азайту бойынша әдебиеттерге зерттеу жүргізді.",
-        nu2_2: "Морт сыну және энергияға негізделген соққыға бейімділік критерийлері бойынша зертханалық жоспар әзірледі.",
+        location:
+          "Астана, Қазақстан",
 
-        roleKaz: "Тағылымдамашы, Кеніштерді жоспарлау бөлімі",
-        kaz1: "Кенішті жоспарлау және карьердегі ашық өндірістік процестер бойынша практикалық білім алды.",
-        kaz2: "GEOVIA Surpac бағдарламасын және өндірістік деректерді пайдаланып, бұрғылау-жару жобаларына көмектесті.",
-        kaz3: "Қауіпсіздік техникасымен танысып, карьерде бұрғылау, жару, тиеу және тасымалдау жұмыстарын бақылады.",
+        workTitle:
+          "Жұмыс тәжірибесі",
 
-        roleNu1: "Зерттеуші көмекшісі (CCS)",
-        nu1_1: "Көмірқышқыл газын (CO₂) ұстау және сақтау бойынша ғылыми жұмыстарды, соның ішінде жарықшақты аймақтардың рөлін талдады.",
-        nu1_2: "Кернді суландыру, біросьтік қысу және өткізгіштік сынақтарын қамтитын зертханалық сынақтарға қатысты.",
+        badgeInternship:
+          "Тағылымдама",
 
-        roleVolkov: "Тағылымдамашы, Геологиялық деректерді цифрлық өңдеу",
-        volkov1: "MapInfo Professional арқылы литологиялық тіліктерді, үлгілерді және кен аралықтарының параметрлерін цифрлады.",
-        volkov2: "Геологиялық ақпаратты жүйелеп, тапсырмаларды үйлестіру мен жұмыс кестесін жүргізуге атсалысты.",
+        badgePartTime:
+          "Жарты күндік",
 
-        eduTitle: "Білім",
-        eduDegree: "Тау-кен ісі саласындағы ғылым бакалавры (CGPA: 3.11/4)",
-        eduClub: "Society for Mining, Metallurgy & Exploration (SME) студенттік клубының мүшесі (2024 — 2025).",
+        badgeResearch:
+          "Зерттеу",
 
-        projectsTitle: "Жобалар",
+        badgeGrant:
+          "«Алаш» гранты (2023)",
 
-        surfaceProjectTitle: "Ашық кенішті жобалау жобасы — Micromine Origin & Beyond",
-        surfaceProjectCourse: "Mine Design Project I, Назарбаев Университеті",
-        surfaceProjectDesc: "Алтынның блоктық моделі негізінде алдын ала ашық карьер жобасын әзірледі, соның ішінде карьерді оңтайландыру, инженерлік карьер дизайны, өндірістік жоспарлау, техника паркін бағалау, үйінді және тасымалдау жолдарының тұжырымдамалары, сондай-ақ алдын ала экономикалық бағалау.",
+        dateAman:
+          "Шілде 2026 — Қазіргі уақыт",
 
-        resourceProjectTitle: "Ресурстарды бағалау жобасы — Isatis.neo",
-        resourceProjectCourse: "MINE 304 Resource Estimation, Назарбаев Университеті",
-        resourceProjectDesc: "Isatis.neo бағдарламасында геостатистикалық әдістерді пайдаланып Pb және Zn ресурстарының блоктық модельдерін құрды. Композиттеу, вариограмма модельдеу, кәдімгі кригинг, кросс-валидация, ресурстарды жіктеу және экономикалық шектік құрам талдауын орындап, ресурстарды бағалау мен кейінгі кенішті жоспарлау шешімдерін қолдады.",
+        roleAman:
+          "QA тағылымдамашысы",
 
-        skillsTitle: "Дағдылар мен бағдарламалар",
+        aman1:
+          "400-ден астам оқиға бейнесін белгілеп, автоматтандырылған метадеректері бар құрылымдалған деректер жиынтығына ұйымдастыратын Python пайплайнын әзірледі.",
 
-        cmdBar: "Мәзірді ашу үшін <kbd>Ctrl + Z</kbd> басыңыз немесе осы жерге түртіңіз",
-        cmdPlaceholder: "Команданы немесе іздеуді жазыңыз...",
-        cmdActions: "Әрекеттер",
-        cmdLinks: "Сілтемелер",
-        cmdPrint: "Басып шығару (Печать)",
-        cmdSite: "Жеке сайт"
+        dateNu2:
+          "Мамыр 2026 — Қазіргі уақыт",
+
+        roleNu2:
+          "Зерттеуші көмекшісі – Тау соққысы және геомеханика",
+
+        nu2_1:
+          "Тау соққысы механизмдері, қауіпті бағалау және тәуекелдерді азайту бойынша әдебиеттерге шолу және тұжырымдамалық зерттеулер жүргізді.",
+
+        nu2_2:
+          "Морт сыну және энергияға негізделген тау соққысына бейімділік критерийлеріне бағытталған алдын ала зертханалық зерттеу жоспарларын әзірледі.",
+
+        roleKaz:
+          "Тағылымдамашы, Кеніштерді жоспарлау бөлімі",
+
+        kaz1:
+          "Кенішті жоспарлау үдерістері мен ашық карьердегі өндірістік операциялар туралы практикалық түсінік алды.",
+
+        kaz2:
+          "GEOVIA Surpac бағдарламасы мен нақты өндірістік деректерді пайдаланып, бұрғылау-жару жобаларын дайындауға көмектесті.",
+
+        kaz3:
+          "Кен қауіпсіздігінің негізгі талаптарын меңгере отырып, бұрғылау, жару, тиеу және тасымалдау операцияларын бақылады.",
+
+        dateNu1:
+          "Маусым 2025 — Қаз. 2025",
+
+        roleNu1:
+          "Зерттеуші көмекшісі – CO₂ ұстау және сақтау (CCS)",
+
+        nu1_1:
+          "CO₂ ұстау және сақтау бойынша ғылыми зерттеулерге шолу жасап, жарықшақ саздары мен жарықшақ аймақтарының мінез-құлқына назар аударды.",
+
+        nu1_2:
+          "Керн арқылы айдау, біросьтік қысу және өткізгіштік сынақтарын қоса алғанда, зертханалық сынақтарды бақылап, оларға көмектесті.",
+
+        dateVolkov:
+          "Жел. 2024 — Қаң. 2025",
+
+        roleVolkov:
+          "Тағылымдамашы, Геологиялық деректерді цифрлық өңдеу",
+
+        volkov1:
+          "MapInfo Professional бағдарламасында литологиялық қималарды, геологиялық үлгілерді және кен аралықтарының параметрлерін цифрлады.",
+
+        volkov2:
+          "Геологиялық деректерді жүйелеп, командалық жобаларды үйлестіру мен кеңсе кестесін басқаруға қолдау көрсетті.",
+
+        eduTitle:
+          "Білім",
+
+        eduDegree:
+          "Тау-кен ісі саласындағы ғылым бакалавры, CGPA: 3.11/4",
+
+        eduCoursework:
+          "Қазіргі бейіндік пәндер: Mine Planning, Mine Design Project I, Mining Geotechnical Engineering, Mine Ventilation.",
+
+        eduClub:
+          "Society for Mining, Metallurgy & Exploration (SME) студенттік клубының мүшесі, 2024–2025.",
+
+        projectsTitle:
+          "Таңдалған академиялық жобалар",
+
+        surfaceProjectTitle:
+          "Ашық кенішті жобалау жобасы — Micromine Origin & Beyond",
+
+        surfaceProjectDesc1:
+          "Micromine Origin & Beyond бағдарламасында алтынның блоктық моделі негізінде карьерді оңтайландыру, соңғы карьер дизайны және өндірістік жоспарлауды қамтитын алдын ала ашық карьер жобасын әзірледі.",
+
+        surfaceProjectDesc2:
+          "Кенішті жоспарлау шешімдерін қолдау үшін техника паркін жоспарлау, үйінді мен тасымалдау жолдарының тұжырымдамалық дизайнын және алдын ала экономикалық бағалауды орындады.",
+
+        resourceProjectTitle:
+          "Ресурстарды бағалау жобасы — Isatis.neo",
+
+        resourceProjectDesc1:
+          "Композиттеу, вариография және кәдімгі кригингті қамтитын геостатистикалық әдістермен Pb және Zn ресурстарының блоктық модельдерін құрды.",
+
+        resourceProjectDesc2:
+          "Ресурстарды бағалау мен кейінгі кенішті жоспарлауды қолдау үшін модельді тексеру, ресурстарды жіктеу және экономикалық шектік құрам талдауын орындады.",
+
+        skillsTitle:
+          "Техникалық дағдылар",
+
+        skillsMining:
+          "Кен ісі және ресурстар бағдарламалары",
+
+        skillsGeoTech:
+          "Геотехника және желдету",
+
+        skillsGis:
+          "GIS және геологиялық деректер",
+
+        skillsProgramming:
+          "Бағдарламалау және деректер",
+
+        skillsDev:
+          "Әзірлеу құралдары",
+
+        cmdBar:
+          "Мәзірді ашу үшін <kbd>Ctrl + Z</kbd> басыңыз немесе осы жерге түртіңіз",
+
+        cmdPlaceholder:
+          "Команданы немесе іздеуді жазыңыз...",
+
+        cmdActions:
+          "Әрекеттер",
+
+        cmdLinks:
+          "Сілтемелер",
+
+        cmdPrint:
+          "Басып шығару (Печать)",
+
+        cmdSite:
+          "Жеке сайт"
       },
 
+      /* ===================================================== */
+      /* RUSSIAN */
+      /* ===================================================== */
+
       ru: {
-        label: "Русский",
-        name: "Рамазан Рахман",
-        bio: "Студент горного дела в Назарбаев Университете с практическим опытом в проектировании горных работ, геомеханике и автоматизации данных на Python.",
-        location: "Астана, Казахстан",
+        label:
+          "Русский",
 
-        workTitle: "Опыт работы",
-        badgeInternship: "Стажировка",
-        badgePartTime: "Неполный день",
-        badgeResearch: "Исследования",
-        badgeGrant: "Грант «Алаш» (2023)",
+        name:
+          "Рамазан Рахман",
 
-        dateAman: "Июль 2026 — По настоящее время",
-        roleAman: "QA-стажер",
-        aman1: "Проводил анализ ложных срабатываний моделей распознавания инцидентов с камер школ и университетов.",
-        aman2: "Разработал Python-пайплайн для автоматической разметки метаданных и организации 400+ видеоинцидентов в датасет.",
+        bio:
+          "Студент горного дела в Назарбаев Университете с практическим опытом в проектировании горных работ, геомеханике и автоматизации данных на Python.",
 
-        dateNu2: "Май 2026 — По настоящее время",
-        roleNu2: "Ассистент-исследователь (Горные удары и геомеханика)",
-        nu2_1: "Провел обзор литературы по механизмам горных ударов, оценке опасностей, мониторингу и методам снижения рисков.",
-        nu2_2: "Разработал план лабораторных испытаний с акцентом на хрупкое разрушение и энергетические критерии удароопасности.",
+        location:
+          "Астана, Казахстан",
 
-        roleKaz: "Стажер, Отдел горного планирования",
-        kaz1: "Изучил производственные процессы открытых горных работ и регламенты горного планирования.",
-        kaz2: "Участвовал в проектировании буровзрывных работ (БВР) в программе GEOVIA Surpac с реальными данными производства.",
-        kaz3: "Освоил требования промышленной безопасности и наблюдал за процессами бурения, взрывания, погрузки и откатки.",
+        workTitle:
+          "Опыт работы",
 
-        roleNu1: "Ассистент-исследователь (CCS)",
-        nu1_1: "Изучал научные статьи по улавливанию и хранению CO₂ (CCS) с упором на роль тектонических разломов и глин трения.",
-        nu1_2: "Участвовал в лабораторных испытаниях: фильтрации керна, одноосном сжатии и определении проницаемости.",
+        badgeInternship:
+          "Стажировка",
 
-        roleVolkov: "Стажер отдела цифровой обработки геологических данных",
-        volkov1: "Оцифровывал литологические разрезы, образцы и параметры рудных интервалов в MapInfo Professional.",
-        volkov2: "Систематизировал геологические данные и участвовал в приоритизации рабочих задач отдела.",
+        badgePartTime:
+          "Неполный день",
 
-        eduTitle: "Образование",
-        eduDegree: "Бакалавр наук по горному делу (CGPA: 3.11/4)",
-        eduClub: "Член студенческого отделения Society for Mining, Metallurgy & Exploration (SME) (2024 — 2025).",
+        badgeResearch:
+          "Исследования",
 
-        projectsTitle: "Проекты",
+        badgeGrant:
+          "Грант «Алаш» (2023)",
 
-        surfaceProjectTitle: "Проектирование открытого карьера — Micromine Origin & Beyond",
-        surfaceProjectCourse: "Mine Design Project I, Назарбаев Университет",
-        surfaceProjectDesc: "Разработал предварительный проект открытого карьера на основе блочной модели золоторудного месторождения, включая оптимизацию карьера, инженерное проектирование, производственное планирование, оценку парка техники, концепции отвала и карьерных дорог, а также предварительную экономическую оценку.",
+        dateAman:
+          "Июль 2026 — По настоящее время",
 
-        resourceProjectTitle: "Проект по оценке ресурсов — Isatis.neo",
-        resourceProjectCourse: "MINE 304 Resource Estimation, Назарбаев Университет",
-        resourceProjectDesc: "Построил блочные модели ресурсов Pb и Zn в Isatis.neo с применением геостатистических методов. Выполнил композитирование, моделирование вариограмм, обычный кригинг, кросс-валидацию, классификацию ресурсов и анализ экономического бортового содержания для оценки ресурсов и последующего планирования горных работ.",
+        roleAman:
+          "QA-стажер",
 
-        skillsTitle: "Навыки и программы",
+        aman1:
+          "Разработал Python-пайплайн для разметки и организации 400+ видеоинцидентов в структурированный датасет с автоматизированными метаданными.",
 
-        cmdBar: "Нажмите <kbd>Ctrl + Z</kbd> или коснитесь здесь, чтобы открыть меню",
-        cmdPlaceholder: "Введите команду или поиск...",
-        cmdActions: "Действия",
-        cmdLinks: "Ссылки",
-        cmdPrint: "Печать",
-        cmdSite: "Личный сайт"
+        dateNu2:
+          "Май 2026 — По настоящее время",
+
+        roleNu2:
+          "Ассистент-исследователь – Горные удары и геомеханика",
+
+        nu2_1:
+          "Проводил обзоры литературы и концептуальные исследования механизмов горных ударов, оценки опасностей и снижения рисков.",
+
+        nu2_2:
+          "Разработал предварительные планы лабораторных исследований с акцентом на хрупкое разрушение и энергетические критерии удароопасности.",
+
+        roleKaz:
+          "Стажер, Отдел горного планирования",
+
+        kaz1:
+          "Получил практическое понимание процессов горного планирования и производственных операций открытого карьера.",
+
+        kaz2:
+          "Участвовал в проектировании буровзрывных работ в GEOVIA Surpac с использованием фактических производственных данных.",
+
+        kaz3:
+          "Наблюдал за бурением, взрыванием, погрузкой и транспортировкой, одновременно изучая ключевые требования промышленной безопасности.",
+
+        dateNu1:
+          "Июнь 2025 — Окт. 2025",
+
+        roleNu1:
+          "Ассистент-исследователь – Улавливание и хранение CO₂ (CCS)",
+
+        nu1_1:
+          "Изучал научные исследования по улавливанию и хранению CO₂ с акцентом на поведение глин трения и зон разломов.",
+
+        nu1_2:
+          "Наблюдал и участвовал в лабораторных испытаниях, включая фильтрацию через керн, одноосное сжатие и определение проницаемости.",
+
+        dateVolkov:
+          "Дек. 2024 — Янв. 2025",
+
+        roleVolkov:
+          "Стажер, Цифровая обработка геологических данных",
+
+        volkov1:
+          "Использовал MapInfo Professional для оцифровки литологических разрезов, геологических образцов и параметров рудных интервалов.",
+
+        volkov2:
+          "Систематизировал геологические данные и поддерживал координацию командных проектов и управление рабочим расписанием.",
+
+        eduTitle:
+          "Образование",
+
+        eduDegree:
+          "Бакалавр наук по горному делу, CGPA: 3.11/4",
+
+        eduCoursework:
+          "Текущие профильные дисциплины: Mine Planning, Mine Design Project I, Mining Geotechnical Engineering, Mine Ventilation.",
+
+        eduClub:
+          "Член студенческого отделения Society for Mining, Metallurgy & Exploration (SME), 2024–2025.",
+
+        projectsTitle:
+          "Избранные академические проекты",
+
+        surfaceProjectTitle:
+          "Проектирование открытого карьера — Micromine Origin & Beyond",
+
+        surfaceProjectDesc1:
+          "Разработал предварительный проект открытого карьера на основе блочной модели золоторудного месторождения в Micromine Origin & Beyond, включая оптимизацию карьера, финальный дизайн и производственное планирование.",
+
+        surfaceProjectDesc2:
+          "Выполнил планирование парка техники, концептуальное проектирование отвала и карьерных дорог, а также предварительную экономическую оценку для поддержки решений по горному планированию.",
+
+        resourceProjectTitle:
+          "Проект по оценке ресурсов — Isatis.neo",
+
+        resourceProjectDesc1:
+          "Построил блочные модели ресурсов Pb и Zn с применением геостатистических методов, включая композитирование, вариографию и обычный кригинг.",
+
+        resourceProjectDesc2:
+          "Выполнил валидацию модели, классификацию ресурсов и анализ экономического бортового содержания для поддержки оценки ресурсов и последующего планирования горных работ.",
+
+        skillsTitle:
+          "Технические навыки",
+
+        skillsMining:
+          "Горное дело и оценка ресурсов",
+
+        skillsGeoTech:
+          "Геотехника и вентиляция",
+
+        skillsGis:
+          "GIS и геологические данные",
+
+        skillsProgramming:
+          "Программирование и данные",
+
+        skillsDev:
+          "Инструменты разработки",
+
+        cmdBar:
+          "Нажмите <kbd>Ctrl + Z</kbd> или коснитесь здесь, чтобы открыть меню",
+
+        cmdPlaceholder:
+          "Введите команду или поиск...",
+
+        cmdActions:
+          "Действия",
+
+        cmdLinks:
+          "Ссылки",
+
+        cmdPrint:
+          "Печать",
+
+        cmdSite:
+          "Личный сайт"
       }
     };
 
-    // Language Switching
-    const toggleBtn = document.getElementById("langToggleBtn");
-    const langMenu = document.getElementById("langMenu");
-    const currentLangLabel = document.getElementById("currentLangLabel");
-    const langOptions = document.querySelectorAll(".lang-option");
-    const cmdInput = document.getElementById("cmdInput");
+    /* ===================================================== */
+    /* LANGUAGE SWITCHING */
+    /* ===================================================== */
+
+    const toggleBtn =
+      document.getElementById("langToggleBtn");
+
+    const langMenu =
+      document.getElementById("langMenu");
+
+    const currentLangLabel =
+      document.getElementById("currentLangLabel");
+
+    const langOptions =
+      document.querySelectorAll(".lang-option");
+
+    const cmdInput =
+      document.getElementById("cmdInput");
 
     function setLanguage(lang) {
-      const selected = translations[lang] ? lang : "en";
-      const dict = translations[selected];
 
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
+      const selected =
+        translations[lang]
+          ? lang
+          : "en";
 
-        if (dict[key]) {
-          if (key === "cmdBar") {
-            el.innerHTML = dict[key];
-          } else {
-            el.textContent = dict[key];
+      const dict =
+        translations[selected];
+
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach((el) => {
+
+          const key =
+            el.getAttribute("data-i18n");
+
+          if (dict[key]) {
+
+            if (key === "cmdBar") {
+              el.innerHTML =
+                dict[key];
+            }
+
+            else {
+              el.textContent =
+                dict[key];
+            }
           }
-        }
-      });
 
-      if (cmdInput && dict.cmdPlaceholder) {
-        cmdInput.placeholder = dict.cmdPlaceholder;
+        });
+
+      if (
+        cmdInput &&
+        dict.cmdPlaceholder
+      ) {
+        cmdInput.placeholder =
+          dict.cmdPlaceholder;
       }
 
-      currentLangLabel.textContent = dict.label;
+      currentLangLabel.textContent =
+        dict.label;
 
-      localStorage.setItem("preferred_lang", selected);
+      localStorage.setItem(
+        "preferred_lang",
+        selected
+      );
 
       langOptions.forEach((opt) => {
+
         opt.classList.toggle(
           "active",
           opt.getAttribute("data-lang") === selected
         );
+
       });
     }
 
-    toggleBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      langMenu.classList.toggle("show");
-    });
+    toggleBtn.addEventListener(
+      "click",
+      (e) => {
 
-    langOptions.forEach((option) => {
-      option.addEventListener("click", () => {
-        const lang = option.getAttribute("data-lang");
+        e.stopPropagation();
 
-        setLanguage(lang);
+        langMenu.classList.toggle(
+          "show"
+        );
 
-        langMenu.classList.remove("show");
-      });
-    });
+      }
+    );
 
-    document.addEventListener("click", () => {
-      langMenu.classList.remove("show");
-    });
+    langOptions.forEach(
+      (option) => {
+
+        option.addEventListener(
+          "click",
+          () => {
+
+            const lang =
+              option.getAttribute("data-lang");
+
+            setLanguage(lang);
+
+            langMenu.classList.remove(
+              "show"
+            );
+
+          }
+        );
+
+      }
+    );
+
+    document.addEventListener(
+      "click",
+      () => {
+
+        langMenu.classList.remove(
+          "show"
+        );
+
+      }
+    );
 
     const savedLang =
-      localStorage.getItem("preferred_lang") || "en";
+      localStorage.getItem(
+        "preferred_lang"
+      ) || "en";
 
     setLanguage(savedLang);
 
-    // Command Menu Logic
+    /* ===================================================== */
+    /* COMMAND MENU */
+    /* ===================================================== */
+
     const cmdBackdrop =
-      document.getElementById("cmdBackdrop");
+      document.getElementById(
+        "cmdBackdrop"
+      );
 
     const cmdModal =
-      document.getElementById("cmdModal");
+      document.getElementById(
+        "cmdModal"
+      );
 
     const cmdCloseBtn =
-      document.getElementById("cmdCloseBtn");
+      document.getElementById(
+        "cmdCloseBtn"
+      );
 
     const openCmdBar =
-      document.getElementById("openCmdBar");
+      document.getElementById(
+        "openCmdBar"
+      );
 
     const cmdActionPrint =
-      document.getElementById("cmdActionPrint");
+      document.getElementById(
+        "cmdActionPrint"
+      );
 
     const cmdItems =
-      document.querySelectorAll(".cmd-item");
+      document.querySelectorAll(
+        ".cmd-item"
+      );
 
     function openCommandMenu() {
-      cmdBackdrop.classList.add("open");
 
-      cmdInput.value = "";
+      cmdBackdrop.classList.add(
+        "open"
+      );
 
-      filterCmdItems("");
+      cmdInput.value =
+        "";
 
-      setTimeout(() => cmdInput.focus(), 50);
+      filterCmdItems(
+        ""
+      );
+
+      setTimeout(
+        () => cmdInput.focus(),
+        50
+      );
     }
 
     function closeCommandMenu() {
-      cmdBackdrop.classList.remove("open");
+
+      cmdBackdrop.classList.remove(
+        "open"
+      );
+
     }
 
-    // Shortcut: Ctrl + Z or Cmd + Z
-    window.addEventListener("keydown", (e) => {
-      if (
-        (e.ctrlKey || e.metaKey) &&
-        (e.key === "z" ||
-          e.key === "Z" ||
-          e.code === "KeyZ")
-      ) {
-        e.preventDefault();
+    /* Ctrl + Z / Cmd + Z */
 
-        if (cmdBackdrop.classList.contains("open")) {
-          closeCommandMenu();
-        } else {
-          openCommandMenu();
+    window.addEventListener(
+      "keydown",
+      (e) => {
+
+        if (
+          (e.ctrlKey || e.metaKey) &&
+          (
+            e.key === "z" ||
+            e.key === "Z" ||
+            e.code === "KeyZ"
+          )
+        ) {
+
+          e.preventDefault();
+
+          if (
+            cmdBackdrop.classList.contains(
+              "open"
+            )
+          ) {
+
+            closeCommandMenu();
+
+          }
+
+          else {
+
+            openCommandMenu();
+
+          }
+
         }
-      } else if (
-        e.key === "Escape" &&
-        cmdBackdrop.classList.contains("open")
-      ) {
-        closeCommandMenu();
+
+        else if (
+          e.key === "Escape" &&
+          cmdBackdrop.classList.contains(
+            "open"
+          )
+        ) {
+
+          closeCommandMenu();
+
+        }
+
       }
-    });
+    );
 
     openCmdBar.addEventListener(
       "click",
@@ -1166,40 +2213,91 @@
       closeCommandMenu
     );
 
-    cmdBackdrop.addEventListener("click", (e) => {
-      if (!cmdModal.contains(e.target)) {
-        closeCommandMenu();
-      }
-    });
+    cmdBackdrop.addEventListener(
+      "click",
+      (e) => {
 
-    // Print Action
-    cmdActionPrint.addEventListener("click", () => {
-      closeCommandMenu();
+        if (
+          !cmdModal.contains(
+            e.target
+          )
+        ) {
 
-      setTimeout(() => {
-        window.print();
-      }, 150);
-    });
+          closeCommandMenu();
 
-    // Command Palette Search
-    function filterCmdItems(query) {
-      const q = query.toLowerCase().trim();
-
-      cmdItems.forEach((item) => {
-        const text =
-          item.textContent.toLowerCase();
-
-        if (!q || text.includes(q)) {
-          item.style.display = "flex";
-        } else {
-          item.style.display = "none";
         }
-      });
+
+      }
+    );
+
+    /* Print */
+
+    cmdActionPrint.addEventListener(
+      "click",
+      () => {
+
+        closeCommandMenu();
+
+        setTimeout(
+          () => {
+            window.print();
+          },
+          150
+        );
+
+      }
+    );
+
+    /* Command Search */
+
+    function filterCmdItems(query) {
+
+      const q =
+        query
+          .toLowerCase()
+          .trim();
+
+      cmdItems.forEach(
+        (item) => {
+
+          const text =
+            item
+              .textContent
+              .toLowerCase();
+
+          if (
+            !q ||
+            text.includes(q)
+          ) {
+
+            item.style.display =
+              "flex";
+
+          }
+
+          else {
+
+            item.style.display =
+              "none";
+
+          }
+
+        }
+      );
+
     }
 
-    cmdInput.addEventListener("input", (e) => {
-      filterCmdItems(e.target.value);
-    });
+    cmdInput.addEventListener(
+      "input",
+      (e) => {
+
+        filterCmdItems(
+          e.target.value
+        );
+
+      }
+    );
   </script>
+
 </body>
 </html>
